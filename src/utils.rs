@@ -1,5 +1,4 @@
 use gtk::prelude::*;
-use std::fs::File;
 use std::path::Path;
 use std::{fs, slice, str};
 
@@ -26,12 +25,6 @@ pub fn read_json(path: &str) -> serde_json::Value {
     let buf = fix_path(path);
     let data = fs::read_to_string(buf).expect("Unable to read file");
     serde_json::from_str(&data).expect("Unable to parse")
-}
-
-#[inline]
-pub fn write_json(path: &str, content: &serde_json::Value) {
-    let output = File::create(fix_path(path)).expect("Unable to open file for writing");
-    serde_json::to_writer(output, content).expect("Unable to write json to file");
 }
 
 #[inline]
@@ -76,15 +69,20 @@ pub fn create_combo_with_model(group_store: &gtk::ListStore) -> gtk::ComboBox {
     group_combo
 }
 
+#[inline]
+pub fn set_combo_active(group_combo: &gtk::ComboBox, value: Option<u32>) {
+    group_combo.set_active(value);
+}
+
 pub fn run_cmd_terminal(cmd: String, escalate: bool) -> bool {
     let cmd_formated = format!("{}; read -p 'Press enter to exit'", cmd);
     let mut args: Vec<&str> = vec![];
     if escalate {
-        args.extend_from_slice(&["-s", "pkexec /usr/share/cachyos-hello/scripts/rootshell.sh"]);
+        args.extend_from_slice(&["-s", "pkexec /usr/share/xerowelcome/scripts/rootshell.sh"]);
     }
     args.push(cmd_formated.as_str());
 
-    let exit_status = Exec::cmd("/usr/share/cachyos-hello/scripts/terminal-helper")
+    let exit_status = Exec::cmd("/usr/share/xerowelcome/scripts/terminal-helper")
         .args(args.as_slice())
         .stdout(Redirection::Pipe)
         .join()

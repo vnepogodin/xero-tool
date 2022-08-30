@@ -9,14 +9,12 @@ mod data_types;
 mod pages;
 mod utils;
 
-use config::{APP_ID, GETTEXT_PACKAGE, LOCALEDIR, PKGDATADIR, PROFILE, VERSION};
+use config::{APP_ID, GETTEXT_PACKAGE, LOCALEDIR, PKGDATADIR, VERSION};
 use data_types::*;
 use gettextrs::LocaleCategory;
 use gtk::{gio, glib, Builder, HeaderBar, Window};
-use once_cell::sync::Lazy;
-use std::collections::HashMap;
 use std::path::Path;
-use std::sync::{Arc, Mutex};
+use std::sync::Arc;
 use utils::*;
 
 use gio::prelude::*;
@@ -24,65 +22,19 @@ use gtk::prelude::*;
 
 use gdk_pixbuf::Pixbuf;
 
-use serde_json::json;
 use std::{fs, str};
 use subprocess::Exec;
 
-static mut g_save_json: Lazy<Mutex<serde_json::Value>> = Lazy::new(|| Mutex::new(json!(null)));
-
 static mut g_hello_window: Option<Arc<HelloWindow>> = None;
 
-fn quick_message(message: &'static str) {
+fn launch_installer() {
     // Create the widgets
-    let dialog = gtk::Dialog::builder().title(message).modal(true).build();
-
-    dialog.set_destroy_with_parent(true);
-    dialog.add_button("_Offline", gtk::ResponseType::No);
-    dialog.add_button("_Online", gtk::ResponseType::Yes);
-    let content_area = dialog.content_area();
-    let label = gtk::Label::new(Some(message));
-
-    // Add the label, and show everything we’ve added
-    content_area.add(&label);
-    dialog.show_all();
-
-    let result = dialog.run();
-    let cmd: String;
-    if result == gtk::ResponseType::No {
-        cmd = fix_path("/usr/local/bin/calamares-offline.sh");
-    } else if result == gtk::ResponseType::Yes {
-        cmd = fix_path("/usr/local/bin/calamares-online.sh");
-    } else {
-        unsafe {
-            dialog.destroy();
-        }
-        return;
-    }
+    let cmd = String::from("sudo -E calamares -D6");
 
     // Spawn child process in separate thread.
     std::thread::spawn(move || {
-        let status = match reqwest::blocking::get("https://cachyos.org") {
-            Ok(resp) => resp.status().is_success() || resp.status().is_server_error(),
-            _ => false,
-        };
-
-        if !status && result == gtk::ResponseType::Yes {
-            let errordialog = gtk::MessageDialog::builder()
-                .title(message)
-                .text("Unable to start online installation! No internet connection")
-                .modal(true)
-                .message_type(gtk::MessageType::Error)
-                .build();
-            errordialog.show();
-            return;
-        }
-
         Exec::shell(cmd).join().unwrap();
     });
-
-    unsafe {
-        dialog.destroy();
-    }
 }
 
 fn show_about_dialog() {
@@ -90,14 +42,14 @@ fn show_about_dialog() {
     unsafe {
         main_window = g_hello_window.clone().unwrap().window.clone();
     }
-    let logo_path = format!("/usr/share/icons/hicolor/scalable/apps/{}.svg", APP_ID);
+    let logo_path = format!("/usr/share/icons/hicolor/scalable/apps/{}.png", APP_ID);
     let logo = Pixbuf::from_file(logo_path).unwrap();
 
     let dialog = gtk::AboutDialog::builder()
         .transient_for(&main_window)
         .modal(true)
-        .program_name(&gettextrs::gettext("CachyOS Hello"))
-        .comments(&gettextrs::gettext("Welcome screen for CachyOS"))
+        .program_name(&gettextrs::gettext("XeroLinux Welcome"))
+        .comments(&gettextrs::gettext("Welcome screen for XeroLinux"))
         .version(VERSION)
         .logo(&logo)
         .authors(vec![
@@ -120,7 +72,7 @@ fn main() {
     gettextrs::bindtextdomain(GETTEXT_PACKAGE, LOCALEDIR).expect("Unable to bind the text domain.");
     gettextrs::textdomain(GETTEXT_PACKAGE).expect("Unable to switch to the text domain.");
 
-    glib::set_application_name("CachyOSHello");
+    glib::set_application_name("XeroLinuxHello");
 
     gtk::init().expect("Unable to start GTK3.");
 
@@ -142,14 +94,6 @@ fn build_ui(application: &gtk::Application) {
         .expect("Unable to read file");
     let preferences: serde_json::Value = serde_json::from_str(&data).expect("Unable to parse");
 
-    // Get saved infos
-    let save_path = fix_path(preferences["save_path"].as_str().unwrap());
-    let save: serde_json::Value = if !Path::new(&save_path).exists() {
-        json!({"locale": ""})
-    } else {
-        read_json(save_path.as_str())
-    };
-
     // Import Css
     let provider = gtk::CssProvider::new();
     provider
@@ -166,10 +110,10 @@ fn build_ui(application: &gtk::Application) {
     builder.connect_signals(|_builder, handler_name| {
         match handler_name {
             // handler_name as defined in the glade file => handler function as defined above
-            "on_languages_changed" => Box::new(on_languages_changed),
             "on_action_clicked" => Box::new(on_action_clicked),
             "on_btn_clicked" => Box::new(on_btn_clicked),
             "on_link_clicked" => Box::new(on_link_clicked),
+            "on_link1_clicked" => Box::new(on_link1_clicked),
             "on_delete_window" => Box::new(on_delete_window),
             _ => Box::new(|_| None),
         }
@@ -184,17 +128,23 @@ fn build_ui(application: &gtk::Application) {
             builder: builder.clone(),
             preferences: preferences.clone(),
         }));
-
-        *g_save_json.lock().unwrap() = save.clone();
     };
 
     // Subtitle of headerbar
     let header: HeaderBar = builder.object("headerbar").expect("Could not get the headerbar");
+    header.set_subtitle(Some("XeroLinux rolling"));
 
-    header.set_subtitle(Some("CachyOS rolling"));
+    // Load logo on first page
+    {
+        let logo_path = format!("{}/data/img/xero.png", PKGDATADIR);
+        let logo = Pixbuf::from_file(logo_path).unwrap();
+        let distribimage: gtk::Image =
+            builder.object("distriblogo").expect("Could not get the distriblogo");
+        distribimage.set_from_pixbuf(Some(&logo));
+    }
 
     // Load images
-    let logo_path = format!("{}/{}.svg", preferences["logo_path"].as_str().unwrap(), APP_ID);
+    let logo_path = format!("{}/{}.png", preferences["logo_path"].as_str().unwrap(), APP_ID);
     if Path::new(&logo_path).exists() {
         let logo = Pixbuf::from_file(logo_path).unwrap();
         main_window.set_icon(Some(&logo));
@@ -269,20 +219,71 @@ fn build_ui(application: &gtk::Application) {
     gettextrs::bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8")
         .expect("Unable to set domain encoding.");
     gettextrs::textdomain(GETTEXT_PACKAGE).expect("Unable to switch to the text domain.");
-    let languages: gtk::ComboBoxText = builder.object("languages").unwrap();
-    languages.set_active_id(Some(get_best_locale(&preferences, &save).as_str()));
 
     // Set autostart switcher state
     let autostart = Path::new(&fix_path(preferences["autostart_path"].as_str().unwrap())).exists();
     let autostart_switch: gtk::Switch = builder.object("autostart").unwrap();
     autostart_switch.set_active(autostart);
 
+    pages::init_mirrorlist_main_button(&builder);
+    pages::init_gpg_main_button(&builder);
+    pages::init_update_sys_main_button(&builder);
+
     // Live systems
     if (Path::new(&preferences["live_path"].as_str().unwrap()).exists())
         && (check_regular_file(preferences["installer_path"].as_str().unwrap()))
     {
-        let installlabel: gtk::Label = builder.object("installlabel").unwrap();
-        installlabel.set_visible(true);
+        // Hide everything that is not available on live system.
+        let forum_btn: gtk::Button = builder.object("forum").unwrap();
+        forum_btn.set_visible(false);
+        let development_btn: gtk::Button = builder.object("development").unwrap();
+        development_btn.set_visible(false);
+        let update_system_btn: gtk::Button = builder.object("update-system").unwrap();
+        update_system_btn.set_visible(false);
+        let drivers_page_btn: gtk::Button = builder.object("driversBrowser").unwrap();
+        drivers_page_btn.set_visible(false);
+        let faq_page_btn: gtk::Button = builder.object("faqBrowser").unwrap();
+        faq_page_btn.set_visible(false);
+        let fix_gpg_keys_btn: gtk::Button = builder.object("fix-gpg-keys").unwrap();
+        fix_gpg_keys_btn.set_visible(false);
+
+        // Cleanup the grid
+        homepage_grid.remove(&forum_btn);
+        homepage_grid.remove(&development_btn);
+        homepage_grid.remove(&update_system_btn);
+        homepage_grid.remove(&drivers_page_btn);
+        homepage_grid.remove(&faq_page_btn);
+        homepage_grid.remove(&fix_gpg_keys_btn);
+
+        // Add/Move needed buttons.
+        let update_mirrorlist_btn: gtk::Button = builder.object("update-arch-mirrorlist").unwrap();
+        let fix_vmware_res_btn = gtk::Button::with_label("VMWare Resolution Fix");
+        fix_vmware_res_btn.set_visible(true);
+        let fix_qemu_res_btn = gtk::Button::with_label("QEMU Resolution Fix");
+        fix_qemu_res_btn.set_visible(true);
+
+        fix_vmware_res_btn.connect_clicked(move |_| {
+            let _ = utils::run_cmd_terminal(String::from("systemctl enable --now vmtoolsd"), true);
+        });
+        fix_qemu_res_btn.connect_clicked(move |_| {
+            let _ = utils::run_cmd_terminal(String::from("xrandr -s 1920x1080"), false);
+        });
+
+        homepage_grid.remove(&update_mirrorlist_btn);
+        homepage_grid.attach(&fix_vmware_res_btn, 0, 5, 1, 1);
+        homepage_grid.attach(&update_mirrorlist_btn, 1, 5, 1, 1);
+        homepage_grid.attach(&fix_qemu_res_btn, 2, 5, 1, 1);
+
+        let install_label: gtk::Label = builder.object("installlabel").unwrap();
+        install_label.set_visible(true);
+
+        let welcome_label: gtk::Label = builder.object("welcomelabel").unwrap();
+        welcome_label.set_label(
+            "This tool will help you install the system, it will self destruct upon successful \
+             installation,\nand replaced with post-install version. We hope you enjoy your stay \
+             on this cool Distro ;)",
+        );
+        welcome_label.set_visible(true);
 
         let install: gtk::Button = builder.object("install").unwrap();
         install.set_visible(true);
@@ -291,14 +292,16 @@ fn build_ui(application: &gtk::Application) {
         main_window.show();
         return;
     } else {
-        let installlabel: gtk::Label = builder.object("installlabel").unwrap();
-        installlabel.set_visible(false);
+        let install_label: gtk::Label = builder.object("installlabel").unwrap();
+        install_label.set_visible(false);
 
         let install: gtk::Button = builder.object("install").unwrap();
         install.set_visible(false);
     }
     pages::create_appbrowser_page(&builder);
-    pages::create_tweaks_page(&builder);
+    pages::create_postinstall_page(&builder);
+    pages::create_drivers_page(&builder);
+    pages::create_faq_page(&builder);
 
     // Show the UI
     main_window.show();
@@ -338,94 +341,6 @@ pub fn get_best_locale(preferences: &serde_json::Value, save: &serde_json::Value
     String::from(preferences["default_locale"].as_str().unwrap())
 }
 
-/// Sets locale of ui and pages.
-fn set_locale(use_locale: &str) {
-    if PROFILE == "Devel" {
-        println!(
-            "┌{0:─^40}┐\n│{1: ^40}│\n└{0:─^40}┘",
-            "",
-            format!("Locale changed to {}", use_locale)
-        );
-    }
-
-    gettextrs::textdomain(GETTEXT_PACKAGE).expect("Unable to switch to the text domain.");
-    glib::setenv("LANGUAGE", use_locale, true).expect("Unable to change env variable.");
-
-    unsafe {
-        g_save_json.lock().unwrap()["locale"] = json!(use_locale);
-    }
-
-    // Real-time locale changing
-    let elts: HashMap<String, serde_json::Value> = serde_json::from_str(&serde_json::to_string(&json!({
-        "label": ["autostartlabel", "development", "software", "donate", "firstcategory", "forum", "install", "installlabel", "involved", "mailling", "readme", "release", "secondcategory", "thirdcategory", "welcomelabel", "welcometitle", "wiki"],
-        "tooltip_text": ["about", "development", "software", "donate", "forum", "mailling", "wiki"],
-    })).unwrap()).unwrap();
-
-    let mut default_texts = json!(null);
-    for method in elts.iter() {
-        if default_texts.get(method.0) == None {
-            default_texts[method.0] = json![null];
-        }
-
-        for elt in elts[method.0].as_array().unwrap() {
-            let elt_value = elt.as_str().unwrap();
-            unsafe {
-                let item: gtk::Widget =
-                    g_hello_window.clone().unwrap().builder.object(elt_value).unwrap();
-                if default_texts[method.0].get(elt_value) == None {
-                    let item_buf = item.property::<String>(method.0.as_str());
-                    default_texts[method.0][elt_value] = json!(item_buf);
-                }
-                if method.0 == "tooltip_text" {
-                    item.set_property(
-                        method.0,
-                        &gettextrs::gettext(default_texts[method.0][elt_value].as_str().unwrap()),
-                    );
-                }
-            }
-        }
-    }
-
-    unsafe {
-        let preferences = &g_hello_window.clone().unwrap().preferences;
-        let save = &*g_save_json.lock().unwrap();
-
-        // Change content of pages
-        let pages = format!(
-            "{}/data/pages/{}",
-            PKGDATADIR,
-            preferences["default_locale"].as_str().unwrap()
-        );
-        for page in fs::read_dir(pages).unwrap() {
-            let stack: gtk::Stack =
-                g_hello_window.clone().unwrap().builder.object("stack").unwrap();
-            let child = stack.child_by_name(&format!(
-                "{}page",
-                page.as_ref().unwrap().path().file_name().unwrap().to_str().unwrap()
-            ));
-            if child == None {
-                eprintln!("child not found");
-                continue;
-            }
-            let first_child = &child.unwrap().downcast::<gtk::Container>().unwrap().children();
-            let second_child =
-                &first_child[0].clone().downcast::<gtk::Container>().unwrap().children();
-            let third_child =
-                &second_child[0].clone().downcast::<gtk::Container>().unwrap().children();
-
-            let label = &third_child[0].clone().downcast::<gtk::Label>().unwrap();
-            label.set_markup(
-                get_page(
-                    page.unwrap().path().file_name().unwrap().to_str().unwrap(),
-                    preferences,
-                    save,
-                )
-                .as_str(),
-            );
-        }
-    }
-}
-
 fn set_autostart(autostart: bool) {
     let autostart_path: String;
     let desktop_path: String;
@@ -449,37 +364,11 @@ fn set_autostart(autostart: bool) {
     }
 }
 
-#[inline]
-fn get_page(name: &str, preferences: &serde_json::Value, save: &serde_json::Value) -> String {
-    let mut filename =
-        format!("{}/data/pages/{}/{}", PKGDATADIR, save["locale"].as_str().unwrap(), name);
-    if !check_regular_file(filename.as_str()) {
-        filename = format!(
-            "{}/data/pages/{}/{}",
-            PKGDATADIR,
-            preferences["default_locale"].as_str().unwrap(),
-            name
-        );
-    }
-
-    fs::read_to_string(filename).unwrap()
-}
-
-/// Handlers
-fn on_languages_changed(param: &[glib::Value]) -> Option<glib::Value> {
-    let widget = param[0].get::<gtk::ComboBox>().unwrap();
-    let active_id = widget.active_id().unwrap();
-
-    set_locale(active_id.as_str());
-
-    None
-}
-
 fn on_action_clicked(param: &[glib::Value]) -> Option<glib::Value> {
     let widget = param[0].get::<gtk::Widget>().unwrap();
     return match widget.widget_name().as_str() {
         "install" => {
-            quick_message("Calamares install type");
+            launch_installer();
             None
         },
         "autostart" => {
@@ -517,15 +406,23 @@ fn on_link_clicked(param: &[glib::Value]) -> Option<glib::Value> {
         let _ = gtk::show_uri_on_window(gtk::Window::NONE, uri, 0);
     }
 
+    Some(false.to_value())
+}
+
+fn on_link1_clicked(param: &[glib::Value]) -> Option<glib::Value> {
+    let widget = param[0].get::<gtk::Widget>().unwrap();
+    let name = widget.widget_name();
+
+    unsafe {
+        let preferences = &g_hello_window.clone().unwrap().preferences["urls"];
+
+        let uri = preferences[name.as_str()].as_str().unwrap();
+        let _ = gtk::show_uri_on_window(gtk::Window::NONE, uri, 0);
+    }
+
     None
 }
 
 fn on_delete_window(_param: &[glib::Value]) -> Option<glib::Value> {
-    unsafe {
-        let preferences = &g_hello_window.clone().unwrap().preferences["save_path"];
-        let save = &*g_save_json.lock().unwrap();
-        write_json(preferences.as_str().unwrap(), save);
-    }
-
     Some(false.to_value())
 }

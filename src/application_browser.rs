@@ -11,22 +11,21 @@ use gtk::prelude::{
 
 use once_cell::sync::Lazy;
 
-use std::fs;
 use std::sync::Mutex;
 
 #[derive(Debug)]
 pub struct ApplicationBrowser {
     pub alpm_handle: alpm::Alpm,
     pub alpm_helper: AlpmHelper,
-    pub filter: bool,
     pub app_store: gtk::TreeStore,
     pub group_store: gtk::ListStore,
     pub group_tofilter: String,
     pub groups: serde_json::Value,
     pub tree_view: gtk::TreeView,
     pub app_browser_box: gtk::Box,
-    pub button_box: gtk::Box,
+    pub group_combo: gtk::ComboBox,
     pub update_system_btn: gtk::Button,
+    pub is_flatpak: bool,
 }
 
 fn new_alpm() -> alpm::Result<alpm::Alpm> {
@@ -58,35 +57,29 @@ impl ApplicationBrowser {
         app_browser_box.set_expand(true);
 
         let button_box = gtk::Box::new(gtk::Orientation::Horizontal, 10);
-        let advanced_button = gtk::ToggleButton::with_label("advanced");
-        advanced_button.set_tooltip_text(Some("Toggle an extended selection of packages"));
-        advanced_button.connect_clicked(on_advanced_clicked);
+        let flatpak_button = gtk::ToggleButton::with_label("Use Flatpak");
+        flatpak_button.set_tooltip_text(Some("Use Flatpak pkg when available"));
+        flatpak_button.connect_clicked(on_flatpak_clicked);
         // let download_button = gtk::Button::with_label("download");
         // download_button.set_tooltip_text(Some("Download the most recent selection of packages"));
         // download_button.connect_clicked(on_download_clicked);
-        let reset_button = gtk::Button::with_label("reset");
-        reset_button.set_tooltip_text(Some("Reset your current selections..."));
-        reset_button.connect_clicked(on_reload_clicked);
-        let update_system_btn = gtk::Button::with_label("UPDATE SYSTEM");
+        let update_system_btn = gtk::Button::with_label("Install Selected");
         update_system_btn.set_tooltip_text(Some("Apply your current selections to the system"));
         update_system_btn.connect_clicked(on_update_system_clicked);
         update_system_btn.set_sensitive(false);
 
         // Group filter
-        let data =
-            fs::read_to_string(format!("{}/data/application_utility/default.json", PKGDATADIR))
-                .expect("Unable to read file");
-        let groups: serde_json::Value = serde_json::from_str(&data).expect("Unable to parse");
+        let json_path = format!("{}/data/application_utility/default.json", PKGDATADIR);
+        let groups = utils::read_json(json_path.as_str());
         let group_store = load_groups_data(&groups);
         let group_combo = utils::create_combo_with_model(&group_store);
         group_combo.connect_changed(on_group_filter_changed);
 
         // Packing button box
-        button_box.pack_start(&advanced_button, false, false, 10);
+        button_box.pack_start(&flatpak_button, false, false, 10);
         button_box.pack_start(&group_combo, false, false, 10);
         button_box.pack_end(&update_system_btn, false, false, 10);
 
-        button_box.pack_end(&reset_button, false, false, 10);
         // button_box.pack_end(&download_button, false, false, 10);
         app_browser_box.pack_start(&button_box, false, false, 10);
 
@@ -103,15 +96,16 @@ impl ApplicationBrowser {
         Self {
             alpm_handle: new_alpm().unwrap(),
             alpm_helper: AlpmHelper::new(),
-            filter: false,
             app_store: gtk::TreeStore::new(&col_types),
             group_store,
             groups,
             group_tofilter: String::from("*"),
             tree_view: gtk::TreeView::new(),
             app_browser_box,
-            button_box,
+            // button_box,
+            group_combo,
             update_system_btn,
+            is_flatpak: false,
         }
     }
 
@@ -124,6 +118,7 @@ impl ApplicationBrowser {
         let mut store_size: usize = 0;
 
         let localdb = self.alpm_handle.localdb();
+        let syncdbs = self.alpm_handle.syncdbs();
 
         for group in self.groups.as_array().unwrap() {
             if let Some(apps_map) = group.get("apps") {
@@ -135,9 +130,6 @@ impl ApplicationBrowser {
                 }
 
                 if self.group_tofilter != "*" && self.group_tofilter != g_name {
-                    continue;
-                }
-                if group["filter"].as_array() != None && !self.filter {
                     continue;
                 }
 
@@ -153,12 +145,21 @@ impl ApplicationBrowser {
                 store_size += 1;
 
                 for app in apps_map.as_array().unwrap() {
-                    let app_name = String::from(app["pkg"].as_str().unwrap());
-                    let mut status = localdb.pkg(app_name).is_ok();
+                    let mut status = if !self.is_flatpak {
+                        let app_name = String::from(app["pkg"].as_str().unwrap());
+                        localdb.pkg(app_name).is_ok()
+                    } else {
+                        false
+                    };
 
-                    if app["filter"].as_array() != None && !self.filter {
-                        continue;
-                    }
+                    let app_desc = if !self.is_flatpak {
+                        let app_name = String::from(app["pkg"].as_str().unwrap());
+                        String::from(
+                            get_remote_pkg_desc(app_name.as_str(), &syncdbs).unwrap_or("None"),
+                        )
+                    } else {
+                        String::from(app["description"].as_str().unwrap())
+                    };
 
                     // Restore user checks
                     if !status
@@ -172,13 +173,23 @@ impl ApplicationBrowser {
                         status = false;
                     }
 
+                    let mut alpm_packages_vec = vec![String::from(app["pkg"].as_str().unwrap())];
+                    {
+                        let alpm_packages_temp = app["extra"].as_array().unwrap();
+                        for alpm_package in alpm_packages_temp {
+                            alpm_packages_vec.push(alpm_package.as_str().unwrap().to_owned());
+                        }
+                    }
+
+                    let alpm_packages = alpm_packages_vec.join(" ");
+
                     self.app_store.insert_with_values(Some(&index), None, &[
                         (GROUP, &None::<String>),
                         (ICON, &String::from(app["icon"].as_str().unwrap())),
                         (APPLICATION, &String::from(app["name"].as_str().unwrap())),
-                        (DESCRIPTION, &String::from(app["description"].as_str().unwrap())),
+                        (DESCRIPTION, &app_desc),
                         (ACTIVE, &status),
-                        (PACKAGE, &String::from(app["pkg"].as_str().unwrap())),
+                        (PACKAGE, &alpm_packages),
                         (INSTALLED, &status),
                     ]);
                 }
@@ -195,6 +206,7 @@ impl ApplicationBrowser {
         if refresh {
             self.alpm_handle = new_alpm().unwrap();
             self.group_store = load_groups_data(&self.groups);
+            // self.group_combo.set_model(Some(&self.group_store));
         }
         self.load_app_data();
         self.tree_view.set_model(Some(&self.app_store));
@@ -310,11 +322,6 @@ fn treeview_cell_check_data_function(
     renderer_cell.set_visible(value != -1);
 }
 
-fn on_reload_clicked(_button: &gtk::Button) {
-    let app_browser = unsafe { &mut G_APP_BROWSER.lock().unwrap() };
-    app_browser.reload_app_data(false);
-}
-
 fn on_group_filter_changed(combo: &gtk::ComboBox) {
     let app_browser = unsafe { &mut G_APP_BROWSER.lock().unwrap() };
     if let Some(tree_iter) = combo.active_iter() {
@@ -331,11 +338,23 @@ fn on_group_filter_changed(combo: &gtk::ComboBox) {
     }
 }
 
-fn on_advanced_clicked(button: &gtk::ToggleButton) {
+fn on_flatpak_clicked(button: &gtk::ToggleButton) {
     let app_browser = unsafe { &mut G_APP_BROWSER.lock().unwrap() };
+
     let is_active = button.is_active();
-    app_browser.filter = is_active;
-    app_browser.reload_app_data(false);
+    let json_path = if is_active {
+        format!("{}/data/application_utility/flatpak.json", PKGDATADIR)
+    } else {
+        format!("{}/data/application_utility/default.json", PKGDATADIR)
+    };
+
+    app_browser.is_flatpak = is_active;
+    app_browser.groups = utils::read_json(json_path.as_str());
+    app_browser.reload_app_data(true);
+    app_browser.group_combo.set_model(Some(&app_browser.group_store));
+
+    // don't call that (for now), it causes dead-lock.
+    // utils::set_combo_active(&app_browser.group_combo, Some(0));
 }
 
 fn on_query_tooltip_tree_view(
@@ -373,7 +392,7 @@ fn on_button_press_event_tree_view(
         if let Some(coords) = event_btn.coords() {
             let (x, y) = coords;
             let path_info = treeview.path_at_pos(x as i32, y as i32);
-            if path_info == None {
+            if path_info.is_none() {
                 return gtk::glib::signal::Inhibit(true);
             }
 
@@ -410,20 +429,31 @@ fn on_app_toggle(_cell: &gtk::CellRendererToggle, path: gtk::TreePath) {
         let alpm_handle = app_browser.get_alpm_handle();
         let update_system_button = app_browser.update_system_btn.clone();
         let localdb = alpm_handle.localdb();
-        let pkg = app_store.value(&iter_a, PACKAGE as i32).get::<String>().unwrap();
+        let alpm_packages = app_store.value(&iter_a, PACKAGE as i32).get::<String>().unwrap();
+        let alpm_packages_vec = alpm_packages.split(' ').map(String::from).collect::<Vec<String>>();
 
-        let installed = localdb.pkg(pkg.clone()).is_ok();
+        let pkg = alpm_packages_vec.first().unwrap();
+
+        let installed = localdb.pkg(pkg.as_bytes()).is_ok();
         // update lists
-        app_browser.alpm_helper.set_package(&pkg, !toggle_a, installed);
+        app_browser.alpm_helper.set_package(&alpm_packages, !toggle_a, installed);
         update_system_button.set_sensitive(!app_browser.alpm_helper.is_empty());
     }
 }
 
 fn on_update_system_clicked(_: &gtk::Button) {
     let app_browser = unsafe { &mut G_APP_BROWSER.lock().unwrap() };
-    if app_browser.alpm_helper.do_update() != AlpmHelperResult::Nothing {
+    if app_browser.alpm_helper.do_update(app_browser.is_flatpak) != AlpmHelperResult::Nothing {
         // reload json for view new apps installed
         app_browser.reload_app_data(true);
+    } else {
+        let infodialog = gtk::MessageDialog::builder()
+            .title("Nothing is changed!")
+            .text("The installation or removal was probably cancelled!")
+            .modal(true)
+            .message_type(gtk::MessageType::Info)
+            .build();
+        infodialog.show();
     }
 }
 
@@ -452,4 +482,18 @@ fn create_column(
     column.add_attribute(cell, attr, val as i32);
 
     column
+}
+
+fn get_remote_pkg_desc<'a>(
+    pkgname: &str,
+    syncdbs: &'a alpm::AlpmList<alpm::Db>,
+) -> Option<&'a str> {
+    for db in syncdbs {
+        // look for a package by name in each database
+        // the database is implemented as a hashmap so this is faster than iterating
+        if let Ok(pkg) = db.pkg(pkgname) {
+            return pkg.desc();
+        }
+    }
+    None
 }
