@@ -76,9 +76,6 @@ fn main() {
 
     gtk::init().expect("Unable to start GTK3.");
 
-    // Fetch JSON files for application browser.
-    fetch_application_browser_json_files();
-
     let application = gtk::Application::new(
         Some(APP_ID),       // Application id
         Default::default(), // Using default flags
@@ -394,46 +391,4 @@ fn on_link1_clicked(param: &[glib::Value]) -> Option<glib::Value> {
 
 fn on_delete_window(_param: &[glib::Value]) -> Option<glib::Value> {
     Some(false.to_value())
-}
-
-fn fetch_application_browser_json_files() {
-    const FETCH_URL: &str =
-        "https://raw.githubusercontent.com/vnepogodin/xero-tool/develop/data/application_utility";
-
-    let fetch_file = |url: &String, path_str: &String| -> String {
-        use std::fs::File;
-        use std::io::Write;
-
-        let response_body = reqwest::blocking::get(url).unwrap().text().unwrap();
-
-        // Open a file in write-only mode, returns `io::Result<File>`
-        let path = Path::new(path_str);
-        let display = path.display();
-        let mut file = match File::create(&path) {
-            Err(why) => panic!("couldn't create {}: {}", display, why),
-            Ok(file) => file,
-        };
-
-        // Write response body string to `file`, returns `io::Result<()>`
-        match file.write_all(response_body.as_bytes()) {
-            Err(why) => panic!("couldn't write to {}: {}", display, why),
-            Ok(_) => println!("successfully wrote to {}", display),
-        };
-
-        String::from(path_str)
-    };
-
-    let json_path = format!("{}/data/application_utility/", PKGDATADIR);
-    let default_json_path = format!("{}/default.json", json_path);
-    let flatpak_json_path = format!("{}/flatpak.json", json_path);
-
-    let default_tmp_path =
-        fetch_file(&format!("{}/default.json", FETCH_URL), &String::from("/tmp/default.json"));
-    let flatpak_tmp_path =
-        fetch_file(&format!("{}/flatpak.json", FETCH_URL), &String::from("/tmp/flatpak.json"));
-
-    utils::run_cmd_root(format!(
-        "mv -v {} {}; mv -v {} {}",
-        default_tmp_path, default_json_path, flatpak_tmp_path, flatpak_json_path
-    ));
 }
