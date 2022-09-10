@@ -2,7 +2,7 @@
 
 pkgname=xerowelcome
 _pkgname=xero-tool
-pkgver=0.0.1
+pkgver=0.0.2
 pkgrel=1
 pkgdesc='Welcome screen for XeroLinux'
 arch=('x86_64')
@@ -39,7 +39,7 @@ package() {
   export RUSTFLAGS="-Cembed-bitcode -C opt-level=3 -Ccodegen-units=1 -Clinker=clang -C link-arg=-flto -Clink-arg=-fuse-ld=/usr/bin/mold"
   DESTDIR="${pkgdir}" meson install
 
-  cp "$pkgdir/usr/share/applications/$pkgname.desktop" "$pkgdir/usr/share/applications/system-tool.desktop" 
+  cp "$pkgdir/usr/share/applications/$pkgname.desktop" "$pkgdir/usr/share/applications/system-tool.desktop"
 
   install -Dvm644 ../$pkgname.desktop \
     "$pkgdir/etc/skel/.config/autostart/$pkgname.desktop"
