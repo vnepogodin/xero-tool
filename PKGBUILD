@@ -16,7 +16,7 @@ conflicts=('xero-tool')
 options=(strip)
 
 build() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
+  cd "${srcdir}/${_pkgname}-${pkgver}"
 
   if ! rustc --version | grep nightly >/dev/null 2>&1; then
     echo "Installing nightly compiler…"
@@ -33,7 +33,7 @@ build() {
 }
 
 package() {
-  cd "${srcdir}/${pkgname}-${pkgver}"/build
+  cd "${srcdir}/${_pkgname}-${pkgver}"/build
 
   export RUSTFLAGS="-Cembed-bitcode -C opt-level=3 -Ccodegen-units=1 -Clinker=clang -C link-arg=-flto -Clink-arg=-fuse-ld=/usr/bin/mold"
   DESTDIR="${pkgdir}" meson install
