@@ -1578,7 +1578,7 @@ dependencies = [
 
 [[package]]
 name = "xerowelcome"
-version = "0.0.2"
+version = "0.0.3"
 dependencies = [
  "alpm",
  "alpm-utils",
