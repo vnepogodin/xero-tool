@@ -410,6 +410,10 @@ fn on_hblock_btn_clicked(_: &gtk::Button) {
 }
 
 fn on_update_system_btn_clicked(_: &gtk::Button) {
+    if std::path::Path::new("/sbin/topgrade").exists() {
+        let _ = utils::run_cmd_terminal(String::from("topgrade"), false);
+        return;
+    }
     let (cmd, escalate) = match utils::get_pacman_wrapper() {
         PacmanWrapper::Yay => ("yay -Syu", false),
         PacmanWrapper::Paru => ("paru --removemake -Syu", false),
