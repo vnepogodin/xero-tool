@@ -1,6 +1,7 @@
 # Maintainer: Vladislav Nepogodin <nepogodin.vlad@gmail.com>
 
 pkgname=xerowelcome
+_pkgname=xero-tool
 pkgver=0.0.1
 pkgrel=1
 pkgdesc='Welcome screen for XeroLinux'
