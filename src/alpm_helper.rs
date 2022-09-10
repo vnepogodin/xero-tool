@@ -43,30 +43,35 @@ impl AlpmHelper {
         if !self.pkg_list_removal.is_empty()
             && self.install_apps(&self.pkg_list_removal, false, is_flatpak)
         {
-            let infodialog = gtk::MessageDialog::builder()
-                .title("Removal completed successfully!")
-                .text(
-                    format!("These pkgs '{:?}' has been removed!", self.pkg_list_removal).as_str(),
-                )
-                .modal(true)
-                .message_type(gtk::MessageType::Info)
-                .build();
-            infodialog.show();
+            if !is_flatpak {
+                let infodialog = gtk::MessageDialog::builder()
+                    .title("Removal completed successfully!")
+                    .text(
+                        format!("These pkgs '{:?}' has been removed!", self.pkg_list_removal)
+                            .as_str(),
+                    )
+                    .modal(true)
+                    .message_type(gtk::MessageType::Info)
+                    .build();
+                infodialog.show();
+            }
             result = AlpmHelperResult::Remove;
         }
         if !self.pkg_list_install.is_empty()
             && self.install_apps(&self.pkg_list_install, true, is_flatpak)
         {
-            let infodialog = gtk::MessageDialog::builder()
-                .title("Installation completed successfully!")
-                .text(
-                    format!("These pkgs '{:?}' has been installed!", self.pkg_list_install)
-                        .as_str(),
-                )
-                .modal(true)
-                .message_type(gtk::MessageType::Info)
-                .build();
-            infodialog.show();
+            if !is_flatpak {
+                let infodialog = gtk::MessageDialog::builder()
+                    .title("Installation completed successfully!")
+                    .text(
+                        format!("These pkgs '{:?}' has been installed!", self.pkg_list_install)
+                            .as_str(),
+                    )
+                    .modal(true)
+                    .message_type(gtk::MessageType::Info)
+                    .build();
+                infodialog.show();
+            }
             if result == AlpmHelperResult::Nothing {
                 result = AlpmHelperResult::Add;
             } else {
