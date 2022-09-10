@@ -307,40 +307,6 @@ fn build_ui(application: &gtk::Application) {
     main_window.show();
 }
 
-/// Returns the best locale, based on user's preferences.
-pub fn get_best_locale(preferences: &serde_json::Value, save: &serde_json::Value) -> String {
-    let saved_locale =
-        format!("{}/{}/LC_MESSAGES/cachyos-hello.mo", LOCALEDIR, save["locale"].as_str().unwrap());
-    if check_regular_file(saved_locale.as_str()) {
-        return String::from(save["locale"].as_str().unwrap());
-    } else if save["locale"].as_str().unwrap() == preferences["default_locale"].as_str().unwrap() {
-        return String::from(preferences["default_locale"].as_str().unwrap());
-    }
-
-    let locale_name = std::env::var("LC_ALL").unwrap_or_else(|_| String::from("en_US.UTF-8"));
-    let sys_locale =
-        string_substr(locale_name.as_str(), 0, locale_name.find('.').unwrap_or(usize::MAX))
-            .unwrap();
-    let user_locale = format!("{}/{}/LC_MESSAGES/cachyos-hello.mo", LOCALEDIR, sys_locale);
-    let two_letters = string_substr(sys_locale, 0, 2).unwrap();
-
-    // If user's locale is supported
-    if check_regular_file(user_locale.as_str()) {
-        if sys_locale.contains('_') {
-            return sys_locale.replace('_', "-");
-        }
-        return String::from(sys_locale);
-    }
-    // If two first letters of user's locale is supported (ex: en_US -> en)
-    else if check_regular_file(
-        format!("{}/{}/LC_MESSAGES/cachyos-hello.mo", LOCALEDIR, two_letters).as_str(),
-    ) {
-        return String::from(two_letters);
-    }
-
-    String::from(preferences["default_locale"].as_str().unwrap())
-}
-
 fn set_autostart(autostart: bool) {
     let autostart_path: String;
     let desktop_path: String;
