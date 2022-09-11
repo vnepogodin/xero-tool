@@ -2,7 +2,7 @@
 
 pkgname=xerowelcome
 _pkgname=xero-tool
-pkgver=0.0.4
+pkgver=0.0.5
 pkgrel=1
 pkgdesc='Welcome screen for XeroLinux'
 arch=('x86_64')
