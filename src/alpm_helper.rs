@@ -113,7 +113,7 @@ impl AlpmHelper {
 
         let packages_do = pkg_list.iter().map(|s| s.to_string() + " ").collect::<String>();
 
-        if !is_flatpak && Path::new("/sbin/pamac-installer").exists() {
+        if is_flatpak || Path::new("/sbin/pamac-installer").exists() {
             let arg = match install {
                 false => "--remove",
                 _ => "",
@@ -135,12 +135,6 @@ impl AlpmHelper {
                 },
             };
             let _ = utils::run_cmd_terminal(format!("{} {}", cmd, packages_do), escalate);
-        } else {
-            let arg = match install {
-                false => "remove",
-                _ => "install",
-            };
-            let _ = utils::run_cmd_terminal(format!("flatpak {} {}", arg, packages_do), false);
         }
 
         match install {
