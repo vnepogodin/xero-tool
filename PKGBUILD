@@ -3,11 +3,11 @@
 pkgname=xerowelcome
 _pkgname=xero-tool
 pkgver=0.0.5
-pkgrel=1
+pkgrel=5
 pkgdesc='Welcome screen for XeroLinux'
 arch=('x86_64')
 license=(GPLv3)
-url="https://github.com/vnepogodin/xero-tool"
+url="https://github.com/xerolinux/xero-welcome"
 depends=('gtk3' 'glib2')
 makedepends=('meson' 'git' 'mold' 'rustup' 'clang')
 source=("${pkgname}-${pkgver}.tar.gz::$url/archive/v$pkgver.tar.gz")
