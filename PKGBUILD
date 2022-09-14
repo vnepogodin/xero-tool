@@ -1,13 +1,13 @@
 # Maintainer: Vladislav Nepogodin <nepogodin.vlad@gmail.com>
 
 pkgname=xerowelcome
-_pkgname=xero-welcome
-pkgver=0.0.5
-pkgrel=5
+_pkgname=xero-tool
+pkgver=0.0.6
+pkgrel=1
 pkgdesc='Welcome screen for XeroLinux'
 arch=('x86_64')
 license=(GPLv3)
-url="https://github.com/xerolinux/xero-welcome"
+url="https://github.com/vnepogodin/xero-tool"
 depends=('gtk3' 'glib2')
 makedepends=('meson' 'git' 'mold' 'rustup' 'clang')
 source=("${pkgname}-${pkgver}.tar.gz::$url/archive/v$pkgver.tar.gz")
