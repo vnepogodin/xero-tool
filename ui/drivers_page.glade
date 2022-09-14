@@ -76,9 +76,10 @@ along with cachyos-welcome.  If not, see <http://www.gnu.org/licenses/>.
 - For nVidia &amp; AMD Pro based GPUs select the "Proprietary Drivers (non Free)".
 - For Intel/AMD(non Pro) and ATI (Radeon HD) select the "Free Open Source Drivers".
 
-That's it, the system will automatically install the right Drivers and Tools for your GPU(s).
+The system will automatically install the right Drivers and Tools for your GPU(s).
+In case you have issues with Optimus NOT running, try switching to LightDM below...
 
-In case you have issues with Optimus Manager running, try switching to LightDM below...</property>
+Note : That's as far as our support goes for *Hybrid* Setups (Dual-GPUs). In case of any issues,  you will have to do the research on your own. Sorry but *I* lack the knowledge and hardware to help.</property>
             <property name="wrap">True</property>
             <property name="width-chars">1</property>
             <property name="max-width-chars">1</property>
