@@ -78,8 +78,7 @@ along with cachyos-welcome.  If not, see <http://www.gnu.org/licenses/>.
 
 The system will automatically install the right Drivers and Tools for your GPU(s). If you have a Hybrid Setup (Dual GPUs)  and have issues with Optimus NOT running, try switching to LightDM below... Read "Note" below...
 
-Note : That's as far as our support goes for *Hybrid* Setups (Dual-GPUs). In case of any issues,  you will have to do the research on your own. Learning opportunity ;).</property>
-            <property name="justify">fill</property>
+Note : That's as far as our support for *Hybrid* Setups (Dual-GPUs) goes. In case of any issues,  you will have to do the research on your own. Learning opportunity ;).</property>
             <property name="wrap">True</property>
             <property name="width-chars">1</property>
             <property name="max-width-chars">1</property>
