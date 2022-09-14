@@ -1,0 +1,23 @@
+{
+    "default_locale": "en",
+    "autostart_path": "~/.config/autostart/xerowelcome.desktop",
+    "data_path": "/usr/share/xerowelcome/data/",
+    "desktop_path": "/usr/share/applications/xerowelcome.desktop",
+    "installer_path": "/usr/bin/calamares",
+    "live_path": "/run/archiso/bootmnt/arch",
+    "locale_path": "/usr/share/locale/",
+    "logo_path": "/usr/share/icons/hicolor/scalable/apps/",
+    "save_path": "~/.config/xerowelcome.json",
+    "ui_path": "/usr/share/xerowelcome/ui/xerowelcome.glade",
+    "style_path": "/usr/share/xerowelcome/ui/style.css",
+    "urls": {
+        "development": "https://github.com/xerolinux",
+        "website": "https://xerolinux.xyz",
+        "donate": "https://www.patreon.com/XeroLinux",
+        "forum": "https://forum.xerolinux.xyz",
+        "telegram": "https://t.me/XeroLinux",
+        "discord": "https://discord.gg/Xg6T78ahtK",
+        "twitter": "https://twitter.com/TechXero",
+        "youtube": "https://youtube.com/c/XeroLinuxOfficial"
+    }
+}

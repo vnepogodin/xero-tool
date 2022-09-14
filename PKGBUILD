@@ -2,7 +2,7 @@
 
 pkgname=xerowelcome
 _pkgname=xero-welcome
-pkgver=0.1.3
+pkgver=0.1.5
 pkgrel=1
 pkgdesc='Welcome screen for XeroLinux'
 arch=('x86_64')
@@ -11,7 +11,7 @@ url="https://github.com/xerolinux/xero-welcome"
 depends=('gtk3' 'glib2')
 makedepends=('meson' 'git' 'mold' 'rustup' 'clang')
 source=("${pkgname}-${pkgver}.tar.gz::$url/archive/v$pkgver.tar.gz")
-sha512sums=('073c1a4e58501c3bcce8e2f17fbcfd7fb13e06c6e2de2a7b95cc6fc2e98b481a75e0509987433ed08adc5aa94baef3123ab6aee758b0e15f3823835641fd4e8b')
+sha512sums=('880dbab7730b7f387d952f0311bfd4dddefdce2368d7ec5ea5f26d1e2b69d9e23e326ebcfe99ae75599b66981e73bc67b9a6b383cfb123110aa041fe426600bb')
 provides=('xero-welcome')
 conflicts=('xero-welcome')
 options=(strip)
