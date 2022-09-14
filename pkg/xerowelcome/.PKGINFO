@@ -2,12 +2,12 @@
 # using fakeroot version 1.29
 pkgname = xerowelcome
 pkgbase = xerowelcome
-pkgver = 0.0.9-1
+pkgver = 0.1.0-1
 pkgdesc = Welcome screen for XeroLinux
 url = https://github.com/xerolinux/xero-welcome
-builddate = 1663188789
+builddate = 1663189503
 packager = DarkXero <info@techxero.com>
-size = 1164599
+size = 1164546
 arch = x86_64
 license = GPLv3
 conflict = xero-tool
