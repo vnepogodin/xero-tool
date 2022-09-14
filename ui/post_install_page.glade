@@ -73,7 +73,9 @@ along with cachyos-welcome.  If not, see <http://www.gnu.org/licenses/>.
             <property name="can-focus">False</property>
             <property name="label" translatable="yes">This is where you configure your system using variety of our scripts. We will do our best to help you tweak your system for a good balance between best performance &amp; stability.
 
-Just be careful with some of the settings, might mess things up. If in doubt, find us on our Social-media links below or on the forums...</property>
+Use only what you need, not all are meant to be used. Also, this is just the beginning, we will have more tweaks added as time goes by. Oh, and this tool was meant to only be used with XeroLinux, if you like some of the features and want to use them on another Arch-based Distro, although tou "Technically" can, it is not recommended you do so, du to many variables this might lead to certain instabilites. Please do NOT ask for support if you do so. Thanks.
+
+Enjoy tweaking your XeroLinux ;)</property>
             <property name="justify">fill</property>
             <property name="wrap">True</property>
             <property name="width-chars">1</property>
