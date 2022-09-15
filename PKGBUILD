@@ -2,7 +2,7 @@
 
 pkgname=xerowelcome
 _pkgname=xero-welcome
-pkgver=0.1.5
+pkgver=0.1.5.1
 pkgrel=1
 pkgdesc='Welcome screen for XeroLinux'
 arch=('x86_64')
@@ -14,6 +14,7 @@ source=("${pkgname}-${pkgver}.tar.gz::$url/archive/v$pkgver.tar.gz")
 sha512sums=('880dbab7730b7f387d952f0311bfd4dddefdce2368d7ec5ea5f26d1e2b69d9e23e326ebcfe99ae75599b66981e73bc67b9a6b383cfb123110aa041fe426600bb')
 provides=('xero-welcome')
 conflicts=('xero-welcome')
+replaces=('xerolinux-tool' 'xerolinux-tool-dev')
 options=(strip)
 
 build() {
