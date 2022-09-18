@@ -475,6 +475,13 @@
                 "extra": []
             },
             {
+                "name": "Blue Mail",
+                "icon": "kmail",
+                "description": "Dynamic",
+                "pkg": "bluemail",
+                "extra": []
+            },
+            {
                 "name": "KMail",
                 "icon": "kmail",
                 "description": "Dynamic",

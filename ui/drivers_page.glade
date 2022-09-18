@@ -71,12 +71,12 @@ along with cachyos-welcome.  If not, see <http://www.gnu.org/licenses/>.
           <object class="GtkLabel" id="mainlabel">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
-            <property name="label" translatable="yes">This is where you will be able to select the Drivers to install. This uses a tool created by the *Manjaro* team, we just implemented here. For support head on over to their forums, not ours.
+            <property name="label" translatable="yes">This is where you will be able to select the Drivers to install. This uses a tool created by the *Manjaro* team, we just implemented here. 
 
 - For nVidia &amp; AMD Pro based GPUs select the "Proprietary Drivers (non Free)".
 - For Intel/AMD(non Pro) and ATI (Radeon HD) select the "Free Open Source Drivers".
 
-The system will automatically install the right Drivers and Tools for your GPU(s). If you have Dual  GPUs and have issues with Optimus NOT running, try switching to LightDM below... Read "Note" below...
+The system will automatically install the right Drivers and Tools for your GPU(s). If you have Dual  GPUs and have issues with Optimus NOT running, try switching to LightDM.
 
 Note : That's as far as our support for *Hybrid* Setups goes. In case of any issues,  you will have to do the research on your own. Consider this as an opportunity to learn ;).</property>
             <property name="justify">fill</property>
