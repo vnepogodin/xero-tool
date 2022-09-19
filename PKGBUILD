@@ -1,7 +1,6 @@
 # Maintainer: Vladislav Nepogodin <nepogodin.vlad@gmail.com>
 
 pkgname=xerowelcome
-_pkgname=xero-welcome
 pkgver=1.0.1
 pkgrel=2
 pkgdesc='Welcome screen for XeroLinux'
@@ -10,15 +9,15 @@ license=(GPLv3)
 url="https://github.com/xerolinux/xero-welcome"
 depends=('gtk3' 'glib2')
 makedepends=('meson' 'git' 'mold' 'rustup' 'clang')
-source=("${pkgname}::$url.git")
-sha512sums=('880dbab7730b7f387d952f0311bfd4dddefdce2368d7ec5ea5f26d1e2b69d9e23e326ebcfe99ae75599b66981e73bc67b9a6b383cfb123110aa041fe426600bb')
-provides=('xero-welcome')
-conflicts=('xero-welcome')
+source=("${pkgname}::git+$url.git")
+sha512sums=('SKIP')
+provides=('xerowelcome')
+conflicts=('xerowelcome')
 replaces=('xerolinux-tool' 'xerolinux-tool-dev')
 options=(strip)
 
 build() {
-  cd "${srcdir}/${_pkgname}-${pkgver}"
+  cd "${srcdir}/${pkgname}"
 
   if ! rustc --version | grep nightly >/dev/null 2>&1; then
     echo "Installing nightly compiler…"
@@ -35,7 +34,7 @@ build() {
 }
 
 package() {
-  cd "${srcdir}/${_pkgname}-${pkgver}"/build
+  cd "${srcdir}/${pkgname}"/build
 
   export RUSTFLAGS="-Cembed-bitcode -C opt-level=3 -Ccodegen-units=1 -Clinker=clang -C link-arg=-flto -Clink-arg=-fuse-ld=/usr/bin/mold"
   DESTDIR="${pkgdir}" meson install
