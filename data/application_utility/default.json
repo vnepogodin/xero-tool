@@ -354,13 +354,6 @@
                 "description": "Dynamic",
                 "pkg": "inkscape",
                 "extra": []
-            },
-            {
-                "name": "Krita",
-                "icon": "krita",
-                "description": "Dynamic",
-                "pkg": "krita",
-                "extra": []
             }
         ]
     },
