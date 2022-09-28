@@ -1,7 +1,7 @@
 # Maintainer: Vladislav Nepogodin <nepogodin.vlad@gmail.com>
 
 pkgname=xerowelcome
-pkgver=1.0.1
+pkgver=1.0.2
 pkgrel=3
 pkgdesc='Welcome screen for XeroLinux'
 arch=('x86_64')

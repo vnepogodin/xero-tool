@@ -82,13 +82,6 @@
                 "extra": []
             },
             {
-                "name": "deezer",
-                "icon": "deezer",
-                "description": "Dynamic",
-                "pkg": "deezer",
-                "extra": []
-            },
-            {
                 "name": "glava",
                 "icon": "qtspectrumanalyzer",
                 "description": "Dynamic",
@@ -572,13 +565,6 @@
         "icon": "notepad",
         "description": "Manage Your Passwords",
         "apps": [
-            {
-                "name": "Enpass",
-                "icon": "enpass",
-                "description": "Dynamic",
-                "pkg": "enpass",
-                "extra": []
-            },
             {
                 "name": "Lastpass",
                 "icon": "lastpass",
