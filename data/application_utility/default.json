@@ -117,6 +117,13 @@
                 "extra": []
             },
             {
+                "name": "Spotify w/ Adblocker",
+                "icon": "spotify",
+                "description": "Dynamic",
+                "pkg": "spotify-adblock",
+                "extra": []
+            },
+            {
                 "name": "James DSP",
                 "icon": "lxmusic",
                 "description": "Dynamic",
@@ -839,6 +846,20 @@
                 "extra": []
             },
             {
+                "name": "Media Downloader",
+                "icon": "youtube",
+                "description": "Dynamic",
+                "pkg": "media-downloader",
+                "extra": []
+            },
+            {
+                "name": "Twitch DL",
+                "icon": "twitch",
+                "description": "Dynamic",
+                "pkg": "twitch-dl-bin",
+                "extra": []
+            },
+            {
                 "name": "Youtube Download (backend)",
                 "icon": "youtube",
                 "description": "Dynamic",
@@ -895,6 +916,13 @@
                 "extra": []
             },
             {
+                "name": "Open Razer",
+                "icon": "mouse",
+                "description": "Dynamic",
+                "pkg": "openrazer-meta",
+                "extra": []
+            },
+            {
                 "name": "PuTTY",
                 "icon": "putty",
                 "description": "Dynamic",
@@ -923,13 +951,6 @@
                 "extra": []
             },
             {
-                "name": "VirtualBox",
-                "icon": "virtualbox",
-                "description": "Dynamic",
-                "pkg": "virtualbox-meta",
-                "extra": []
-            },
-            {
                 "name": "WiNE",
                 "icon": "wine",
                 "description": "Dynamic",
@@ -942,6 +963,27 @@
                 "description": "Dynamic",
                 "pkg": "timeshift",
                 "extra": []
+            }
+        ]
+    }
+    {
+        "name": "Virtualization",
+        "icon": "virtualbox",
+        "description": "Various Virtualization Utilities",
+        "apps": [
+            {
+                "name": "VirtualBox",
+                "icon": "virtualbox",
+                "description": "Dynamic",
+                "pkg": "virtualbox-meta",
+                "extra": []
+            },
+            {
+                "name": "VMWare Workstation",
+                "icon": "virtualbox",
+                "description": "Dynamic",
+                "pkg": "vmware-workstation",
+                "extra": ["vmware-keymaps","vmware-unlocker-bin"]
             }
         ]
     }
