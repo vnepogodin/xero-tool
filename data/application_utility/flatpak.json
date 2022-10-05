@@ -544,6 +544,13 @@
                 "extra": []
             },
             {
+                "name": "WebCord",
+                "icon": "discord",
+                "description": "A Discord and Fosscord client in electron",
+                "pkg": "io.github.spacingbat3.webcord",
+                "extra": []
+            },
+            {
                 "name": "Element",
                 "icon": "element-desktop",
                 "description": "Glossy Matrix collaboration client - desktop version",

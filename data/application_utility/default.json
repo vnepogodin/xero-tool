@@ -484,9 +484,9 @@
         ]
     },
     {
-        "name": "Libre Office",
+        "name": "Office Tools",
         "icon": "libreoffice-main",
-        "description": "Best Office Suite There Is",
+        "description": "Best Office Suites",
         "apps": [
             {
                 "name": "Libre Office Fresh",
@@ -496,11 +496,11 @@
                 "extra": ["hunspell-en_us"]
             },
             {
-                "name": "Libre Office Still",
+                "name": "Free Office",
                 "icon": "libreoffice-main",
                 "description": "Dynamic",
-                "pkg": "libreoffice-still",
-                "extra": ["hunspell-en_us"]
+                "pkg": "freeoffice",
+                "extra": []
             }
         ]
     },
@@ -531,13 +531,6 @@
                 "extra": []
             },
             {
-                "name": "Fetchpkg",
-                "icon": "fetch",
-                "description": "Dynamic",
-                "pkg": "fetchpkg",
-                "extra": []
-            },
-            {
                 "name": "Kalu KDE",
                 "icon": "plasma",
                 "description": "Dynamic",
@@ -552,31 +545,10 @@
                 "extra": ["alpm_octopi_utils"]
             },
             {
-                "name": "PacSeek",
-                "icon": "terminal",
-                "description": "Dynamic",
-                "pkg": "pacseek-bin",
-                "extra": []
-            },
-            {
                 "name": "Paru",
                 "icon": "konsole",
                 "description": "Dynamic",
                 "pkg": "paru-bin",
-                "extra": []
-            }
-        ]
-    },
-    {
-        "name": "Password Managers",
-        "icon": "notepad",
-        "description": "Manage Your Passwords",
-        "apps": [
-            {
-                "name": "Lastpass",
-                "icon": "lastpass",
-                "description": "Dynamic",
-                "pkg": "lastpass",
                 "extra": []
             }
         ]
@@ -748,7 +720,7 @@
                 "extra": []
             },
             {
-                "name": "CPI-ID",
+                "name": "CPU-ID",
                 "icon": "cpuid",
                 "description": "Dynamic",
                 "pkg": "cpuid",
@@ -846,7 +818,7 @@
                 "extra": []
             },
             {
-                "name": "Media Downloader",
+                "name": "Media Downloader (Front-end)",
                 "icon": "youtube",
                 "description": "Dynamic",
                 "pkg": "media-downloader",
