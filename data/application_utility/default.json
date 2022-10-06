@@ -363,13 +363,6 @@
         "description": "Browsers, email & Social",
         "apps": [
             {
-                "name": "Firefox",
-                "icon": "firefox",
-                "description": "Dynamic",
-                "pkg": "firefox",
-                "extra": ["firefox-ublock-origin"]
-            },
-            {
                 "name": "Netsurf",
                 "icon": "web",
                 "description": "Dynamic",
