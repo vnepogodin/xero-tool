@@ -542,7 +542,7 @@
                 "icon": "octopi",
                 "description": "Dynamic",
                 "pkg": "octopi",
-                "extra": ["alpm_octopi_utils"]
+                "extra": ["alpm_octopi_utils","octopi-notifier-qt5"]
             },
             {
                 "name": "Paru",
