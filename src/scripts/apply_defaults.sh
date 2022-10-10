@@ -68,7 +68,7 @@ case $CHOICE in
       sleep 2
       sudo pacman -Rdd xero-kde-config --noconfirm
       sudo pacman -Rdd lightly-git --noconfirm
-      sudo pacman -S kde-rice kvantum --noconfirm --needed
+      sudo pacman -S kde-rice kvantum kvantum-theme-layan-git --noconfirm --needed
       cp -rf /etc/skel/. ~
       sudo sed -i "s/Current=.*/Current=XeroDark/" /etc/sddm.conf.d/kde_settings.conf
       cd ~ && git clone https://github.com/xerolinux/default-grub.git
