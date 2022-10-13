@@ -676,6 +676,13 @@
                 "description": "GNOME Terminal With Transparency.",
                 "pkg": "gnome-terminal-transparency",
                 "extra": []
+            },
+            {
+                "name": "Tabby Tabbed Terminal",
+                "icon": "terminal",
+                "description": "Dynamic",
+                "pkg": "tabby-bin",
+                "extra": []
             }
         ]
     },
