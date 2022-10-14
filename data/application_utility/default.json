@@ -191,7 +191,7 @@
                 "icon": "timeshift",
                 "description": "Dynamic",
                 "pkg": "timeshift-support",
-                "extra": []
+                "extra": ["grub-btrfs"]
             }
         ]
     },
