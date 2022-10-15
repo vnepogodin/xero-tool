@@ -8,7 +8,7 @@
 echo
 tput setaf 3
 echo "###############################################################################"
-echo "#                          XeroLinux System Updater.                          #"
+echo "#                          XeroLinux System Updater                           #"
 echo "#                                                                             #"
 echo "#                            !!!! ATTENTION !!!                               #"
 echo "#                                                                             #"
