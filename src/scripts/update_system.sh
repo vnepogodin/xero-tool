@@ -35,6 +35,8 @@ echo
 echo "Type Your Selection..."
 echo
 
+while :; do
+
 read CHOICE
 
 case $CHOICE in
@@ -88,8 +90,7 @@ case $CHOICE in
       ;;
 
     4 )
-      	break
-
+      break
       ;;
 
     * )
@@ -98,3 +99,4 @@ case $CHOICE in
       echo "#################################"
       ;;
 esac
+done
