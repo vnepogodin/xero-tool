@@ -30,6 +30,8 @@ echo "########## Advanced Users ##########"
 echo
 echo "3.  Everything, One Shot. (Nuke!)"
 echo
+echo "4.  Exit Script"
+echo
 echo "Type Your Selection..."
 echo
 
@@ -82,6 +84,11 @@ case $CHOICE in
       echo "                 Done !                "
       echo "#######################################"
 			clear && sh /usr/share/xerowelcome/scripts/update_system.sh
+
+      ;;
+
+    4 )
+      	break
 
       ;;
 
