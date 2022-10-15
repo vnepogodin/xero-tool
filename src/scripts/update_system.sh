@@ -30,7 +30,7 @@ echo "########## Advanced Users ##########"
 echo
 echo "3.  Everything, One Shot. (Nuke!)"
 echo
-echo "Type Your Selection..."
+echo "Type Your Selection. To Exit, just close Window."
 echo
 
 while :; do
@@ -89,7 +89,7 @@ case $CHOICE in
 
     * )
       echo "#################################"
-      echo "Choose the correct number"
+      echo "    Choose the correct number    "
       echo "#################################"
       ;;
 esac
