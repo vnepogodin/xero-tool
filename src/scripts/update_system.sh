@@ -83,7 +83,7 @@ case $CHOICE in
       echo "#######################################"
       echo "                 Done !                "
       echo "#######################################"
-			clear && sh /usr/share/xerowelcome/scripts/update_system.sh
+
 
       ;;
 
