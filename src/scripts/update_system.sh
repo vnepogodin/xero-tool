@@ -81,9 +81,9 @@ case $CHOICE in
 			topgrade
 			sleep 3
       echo "#######################################"
-      echo "                 Done !                "
+      echo " Done, You can close the window now..  "
       echo "#######################################"
-
+            exit
 
       ;;
 
