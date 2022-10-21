@@ -29,12 +29,12 @@
     },
     {
         "name": "Android Tools",
-        "icon": "android",
+        "icon": "anbox",
         "description": "Various tools for Android",
         "apps": [
             {
                 "name": "Android Tools",
-                "icon": "android",
+                "icon": "usbimager",
                 "description": "Dynamic.",
                 "pkg": "android-tools",
                 "extra": []
@@ -83,7 +83,7 @@
             },
             {
                 "name": "Glava",
-                "icon": "qtspectrumanalyzer",
+                "icon": "music_icon-24",
                 "description": "Dynamic",
                 "pkg": "glava",
                 "extra": []
@@ -223,7 +223,7 @@
             },
             {
                 "name": "Hugo",
-                "icon": "webbrowser",
+                "icon": "webide",
                 "description": "Dynamic",
                 "pkg": "hugo",
                 "extra": []
@@ -315,7 +315,7 @@
 
             {
                 "name": "Mangohud",
-                "icon": "games",
+                "icon": "help-info",
                 "description": "Dynamic",
                 "pkg": "mangohud",
                 "extra": []
@@ -364,7 +364,7 @@
         "apps": [
             {
                 "name": "Netsurf",
-                "icon": "web",
+                "icon": "net.xmind.XMind",
                 "description": "Dynamic",
                 "pkg": "netsurf",
                 "extra": []
@@ -427,7 +427,7 @@
             },
             {
                 "name": "Nitroshare",
-                "icon": "nitroshare",
+                "icon": "neversong",
                 "description": "Dynamic",
                 "pkg": "nitroshare",
                 "extra": []
@@ -497,7 +497,7 @@
         "apps": [
             {
                 "name": "Aura",
-                "icon": "aura",
+                "icon": "beagled",
                 "description": "Dynamic",
                 "pkg": "aura-bin",
                 "extra": []
@@ -511,7 +511,7 @@
             },
             {
                 "name": "Discover",
-                "icon": "discover",
+                "icon": "org.kde.discover",
                 "description": "Dynamic",
                 "pkg": "discover",
                 "extra": []
@@ -576,7 +576,7 @@
     },
     {
         "name": "Remote Desktop",
-        "icon": "vnc",
+        "icon": "remote-desktop",
         "description": "Remote Desktop Tools",
         "apps": [
             {
@@ -588,14 +588,14 @@
             },
             {
                 "name": "No Machine",
-                "icon": "nomachine",
+                "icon": "remmina",
                 "description": "Dynamic",
                 "pkg": "nomachine",
                 "extra": []
             },
             {
                 "name": "RealVNC Server",
-                "icon": "vnc",
+                "icon": "remote-desktop",
                 "description": "Dynamic",
                 "pkg": "realvnc-vnc-server",
                 "extra": ["realvnc-vnc-viewer"]
@@ -611,7 +611,7 @@
     },
     {
         "name": "Ricing",
-        "icon": "art",
+        "icon": "theme-config",
         "description": "Tools That Will Help With Ricing",
         "apps": [
             {
@@ -646,7 +646,7 @@
     },
     {
         "name": "Terminal Emulators",
-        "icon": "konsole",
+        "icon": "terminix",
         "description": "Extra Terminal Emulators",
         "apps": [
             {
@@ -686,7 +686,7 @@
         "apps": [
             {
                 "name": "Bash Pipes",
-                "icon": "pipes",
+                "icon": "bash",
                 "description": "Dynamic",
                 "pkg": "bash-pipes",
                 "extra": []
@@ -707,42 +707,42 @@
             },
             {
                 "name": "CPU Fetch",
-                "icon": "cpufetch",
+                "icon": "cpuinfo",
                 "description": "Dynamic",
                 "pkg": "cpufetch",
                 "extra": []
             },
             {
                 "name": "CPU-ID",
-                "icon": "cpuid",
+                "icon": "cpuinfo",
                 "description": "Dynamic",
                 "pkg": "cpuid",
                 "extra": []
             },
             {
                 "name": "FM-6000",
-                "icon": "terminal",
+                "icon": "termius",
                 "description": "Dynamic",
                 "pkg": "fm6000",
                 "extra": []
             },
             {
                 "name": "Gotop",
-                "icon": "gotop",
+                "icon": "btop",
                 "description": "Dynamic",
                 "pkg": "gotop",
                 "extra": []
             },
             {
                 "name": "Neo Matrix",
-                "icon": "matrix",
+                "icon": "maui-station",
                 "description": "Dynamic",
                 "pkg": "neo-matrix",
                 "extra": ["cmatrix"]
             },
             {
-                "name": "nVtops",
-                "icon": "nvtop",
+                "name": "nVtop",
+                "icon": "nvclock",
                 "description": "Dynamic",
                 "pkg": "nvtop",
                 "extra": []
@@ -798,7 +798,7 @@
             },
             {
                 "name": "Plex Media Server",
-                "icon": "plex",
+                "icon": "pnmixer",
                 "description": "Dynamic",
                 "pkg": "plex-media-server",
                 "extra": ["plex-media-player"]
@@ -812,7 +812,7 @@
             },
             {
                 "name": "Twitch DL",
-                "icon": "twitch",
+                "icon": "tvtime",
                 "description": "Dynamic",
                 "pkg": "twitch-dl-bin",
                 "extra": []
@@ -826,7 +826,7 @@
         "apps": [
             {
                 "name": "App Image Launcher",
-                "icon": "appimagelauncher",
+                "icon": "AppImage",
                 "description": "Dynamic",
                 "pkg": "appimagelauncher",
                 "extra": []
@@ -840,28 +840,28 @@
             },
             {
                 "name": "Core Control",
-                "icon": "amd",
+                "icon": "system-error",
                 "description": "Dynamic",
                 "pkg": "corectrl",
                 "extra": []
             },
             {
                 "name": "CPU-X",
-                "icon": "CPU",
+                "icon": "cpu-x",
                 "description": "Dynamic",
                 "pkg": "cpu-x",
                 "extra": []
             },
             {
                 "name": "Docker",
-                "icon": "docker",
+                "icon": "dnfdragora",
                 "description": "Dynamic",
                 "pkg": "docker",
                 "extra": ["docker-buildx","docker-compose","docker-machine","python-docker"]
             },
             {
                 "name": "Fan Control GUI",
-                "icon": "fans",
+                "icon": "control-center2",
                 "description": "Dynamic",
                 "pkg": "fancontrol-gui",
                 "extra": []
@@ -889,7 +889,7 @@
             },
             {
                 "name": "Radeon Control",
-                "icon": "gpu",
+                "icon": "red_glasses",
                 "description": "Dynamic",
                 "pkg": "radeontool",
                 "extra": []
@@ -903,7 +903,7 @@
             },
             {
                 "name": "System Monitoring Center",
-                "icon": "sysprofs",
+                "icon": "system-monitor",
                 "description": "Dynamic",
                 "pkg": "system-monitoring-center",
                 "extra": []
