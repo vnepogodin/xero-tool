@@ -54,7 +54,7 @@
                 "extra": []
             },
             {
-                "name": "android-sdk-platform-tools",
+                "name": "Android SDK Tools",
                 "icon": "androidstudio",
                 "description": "Dynamic",
                 "pkg": "android-sdk-platform-tools",
@@ -388,13 +388,6 @@
                 "icon": "waterfox",
                 "description": "Dynamic",
                 "pkg": "waterfox-g4-bin",
-                "extra": []
-            },
-            {
-                "name": "Tangram",
-                "icon": "tangram",
-                "description": "Dynamic",
-                "pkg": "tangram",
                 "extra": []
             },
             {
@@ -783,13 +776,6 @@
                 "extra": []
             },
             {
-                "name": "Kden Live",
-                "icon": "kdenlive",
-                "description": "Dynamic",
-                "pkg": "kdenlive",
-                "extra": []
-            },
-            {
                 "name": "Simple Screen Recorder",
                 "icon": "simplescreenrecorder",
                 "description": "Dynamic",
@@ -822,20 +808,13 @@
                 "icon": "youtube",
                 "description": "Dynamic",
                 "pkg": "media-downloader",
-                "extra": []
+                "extra": ["yt-dlp"]
             },
             {
                 "name": "Twitch DL",
                 "icon": "twitch",
                 "description": "Dynamic",
                 "pkg": "twitch-dl-bin",
-                "extra": []
-            },
-            {
-                "name": "Youtube Download (backend)",
-                "icon": "youtube",
-                "description": "Dynamic",
-                "pkg": "yt-dlp",
                 "extra": []
             }
         ]
@@ -872,6 +851,13 @@
                 "description": "Dynamic",
                 "pkg": "cpu-x",
                 "extra": []
+            },
+            {
+                "name": "Docker",
+                "icon": "docker",
+                "description": "Dynamic",
+                "pkg": "docker",
+                "extra": ["docker-buildx","docker-compose","docker-machine","python-docker"]
             },
             {
                 "name": "Fan Control GUI",

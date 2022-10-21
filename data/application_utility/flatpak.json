@@ -12,7 +12,7 @@
                 "extra": []
             },
             {
-                "name": "guiscrcpy",
+                "name": "GUI Scrcpy",
                 "icon": "guiscrcpy",
                 "description": "Android Screen Mirroring Software",
                 "pkg": "in.srev.guiscrcpy",
@@ -173,7 +173,7 @@
                 "extra": []
             },
             {
-                "name": "gitg",
+                "name": "Git-G",
                 "icon": "git",
                 "description": "Graphical user interface for git",
                 "pkg": "org.gnome.gitg",
@@ -183,7 +183,14 @@
                 "name": "GitKraken",
                 "icon": "GitKraken",
                 "description": "For repo management, in-app code editing & issue tracking.",
-                "pkg": "com.axosoft.GitKraken",
+                "pkg": "md.obsidian.Obsidian",
+                "extra": []
+            },
+            {
+                "name": "Obsidian",
+                "icon": "obsidian",
+                "description": "Obsidian is a powerful knowledge base that works on top of a local folder of plain text Markdown files.",
+                "pkg": "com.visualstudio.code-oss",
                 "extra": []
             },
             {
@@ -348,10 +355,24 @@
                 "extra": []
             },
             {
+                "name": "GDLauncher",
+                "icon": "minecraft",
+                "description": "This is an unofficial package. Issues with it should not be reported to GDLauncher upstream!",
+                "pkg": "io.gdevs.GDLauncher",
+                "extra": []
+            },
+            {
                 "name": "PolyMC",
                 "icon": "minecraft",
                 "description": "A launcher that allows you to easily manage multiple installations.",
                 "pkg": "org.polymc.PolyMC",
+                "extra": []
+            },
+            {
+                "name": "Prism Launcher",
+                "icon": "minecraft",
+                "description": "Prism Launcher is a custom launcher for Minecraft that focuses on predictability .",
+                "pkg": "org.prismlauncher.PrismLauncher",
                 "extra": []
             },
             {
@@ -369,17 +390,10 @@
         "description": "Retro games/emulators",
         "apps": [
             {
-                "name": "RetroArch",
-                "icon": "retroarch",
-                "description": "Frontend for emulators, game engines and media players.",
-                "pkg": "org.libretro.RetroArch",
-                "extra": []
-            },
-            {
-                "name": "ScummVM",
-                "icon": "scummvm",
-                "description": "Interpreter for numerous adventure games and role-playing games.",
-                "pkg": "org.scummvm.ScummVM",
+                "name": "Citra",
+                "icon": "citra",
+                "description": "Nintendo 3DS emulator",
+                "pkg": "org.citra_emu.citra",
                 "extra": []
             },
             {
@@ -387,13 +401,6 @@
                 "icon": "dolphin-emu",
                 "description": "GameCube / Wii / Triforce Emulator",
                 "pkg": "org.DolphinEmu.dolphin-emu",
-                "extra": []
-            },
-            {
-                "name": "PPSSPP",
-                "icon": "ppsspp",
-                "description": "A PlayStation Portable emulator",
-                "pkg": "org.ppsspp.PPSSPP",
                 "extra": []
             },
             {
@@ -411,24 +418,52 @@
                 "extra": []
             },
             {
-                "name": "Citra",
-                "icon": "citra",
-                "description": "Nintendo 3DS emulator",
-                "pkg": "org.citra_emu.citra",
+                "name": "PPSSPP",
+                "icon": "ppsspp",
+                "description": "A PlayStation Portable emulator",
+                "pkg": "org.ppsspp.PPSSPP",
                 "extra": []
             },
             {
-                "name": "yuzu",
-                "icon": "yuzu",
-                "description": "Nintendo Switch emulator",
-                "pkg": "org.yuzu_emu.yuzu",
+                "name": "RetroArch",
+                "icon": "retroarch",
+                "description": "Frontend for emulators, game engines and media players.",
+                "pkg": "org.libretro.RetroArch",
                 "extra": []
             },
             {
                 "name": "RPCS3",
                 "icon": "rpcs3",
                 "description": "Open-source Sony PlayStation 3 Emulator",
+                "pkg": "org.ryujinx.Ryujinx",
+                "extra": []
+            },
+            {
+                "name": "Ryujinx",
+                "icon": "ryujinx",
+                "description": "An open-source Nintendo Switch emulator written in C-Sharp",
                 "pkg": "net.rpcs3.RPCS3",
+                "extra": []
+            },
+            {
+                "name": "ScummVM",
+                "icon": "scummvm",
+                "description": "Interpreter for numerous adventure games and role-playing games.",
+                "pkg": "org.scummvm.ScummVM",
+                "extra": []
+            },
+            {
+                "name": "Snes9x",
+                "icon": "nintendo",
+                "description": "A freeware Super Nintendo Entertainment System (SNES) emulator.",
+                "pkg": "com.snes9x.Snes9x",
+                "extra": []
+            },
+            {
+                "name": "Yuzu",
+                "icon": "yuzu",
+                "description": "Nintendo Switch emulator",
+                "pkg": "org.yuzu_emu.yuzu",
                 "extra": []
             }
         ]
@@ -520,6 +555,13 @@
                 "icon": "geary",
                 "description": "Send and receive mail",
                 "pkg": "org.gnome.Geary",
+                "extra": []
+            },
+            {
+                "name": "BlueMail",
+                "icon": "email",
+                "description": "BlueMail by Blix is a free, beautifully designed, universal email app",
+                "pkg": "flathub net.blix.BlueMail",
                 "extra": []
             },
             {
@@ -705,6 +747,13 @@
                 "extra": []
             },
             {
+                "name": "Tangram",
+                "icon": "tangram",
+                "description": "Tangram is a new kind of browser. It is designed to organize and run your Web applications.",
+                "pkg": "flathub re.sonny.Tangram",
+                "extra": []
+            },
+            {
                 "name": "Microsoft Edge",
                 "icon": "microsoft-edge",
                 "description": "Browser",
@@ -777,6 +826,20 @@
         ]
     },
     {
+        "name": "Package Managers",
+        "icon": "pamac",
+        "description": "Extra GUI Package Managers",
+        "apps": [
+            {
+                "name": "AppImage Pool",
+                "icon": "pamac",
+                "description": "Simple AppImageHub Client",
+                "pkg": "io.github.prateekmedia.appimagepool",
+                "extra": []
+            }
+        ]
+    },
+    {
         "name": "Remote Desktop",
         "icon": "remote-desktop",
         "description": "Remote Desktop Tools",
@@ -817,6 +880,13 @@
                 "extra": []
             },
             {
+                "name": "Podman Desktop",
+                "icon": "podman",
+                "description": "Manage Podman and other container engines from a single UI and tray.",
+                "pkg": "io.podman_desktop.PodmanDesktop",
+                "extra": []
+            },
+            {
                 "name": "HydraPaper",
                 "icon": "gnome-computer",
                 "description": "Wallpaper manager with multi monitor support",
@@ -824,10 +894,24 @@
                 "extra": []
             },
             {
+                "name": "RazerGenie",
+                "icon": "mouse",
+                "description": "Qt application for configuring your Razer devices under GNU/Linux.",
+                "pkg": "xyz.z3ntu.razergenie",
+                "extra": []
+            },
+            {
                 "name": "Warpinator",
                 "icon": "warpinator",
                 "description": "Send and Receive Files across the Network",
                 "pkg": "org.x.Warpinator",
+                "extra": []
+            },
+            {
+                "name": "Whaler",
+                "icon": "podman",
+                "description": "Docker Container Management",
+                "pkg": "com.github.sdv43.whaler",
                 "extra": []
             }
         ]
@@ -885,6 +969,13 @@
                 "description": "Live streaming and video recording software",
                 "pkg": "com.obsproject.Studio",
                 "extra": ["com.obsproject.Studio.Plugin.OBSVkCapture","com.obsproject.Studio.Plugin.Gstreamer","com.obsproject.Studio.Plugin.TransitionTable","com.obsproject.Studio.Plugin.waveform","com.obsproject.Studio.Plugin.InputOverlay","com.obsproject.Studio.Plugin.SceneSwitcher","com.obsproject.Studio.Plugin.MoveTransition","com.obsproject.Studio.Plugin.ScaleToSound","com.obsproject.Studio.Plugin.NVFBC","com.obsproject.Studio.Plugin.WebSocket"]
+            },
+            {
+                "name": "KdenLive",
+                "icon": "kdenlive",
+                "description": "Kdenlive is a non linear video editor. It is based on the MLT framework",
+                "pkg": "flathub org.kde.kdenlive",
+                "extra": []
             },
             {
                 "name": "OpenShot Video Editor",
