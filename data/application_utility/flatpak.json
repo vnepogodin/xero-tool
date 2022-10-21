@@ -33,10 +33,31 @@
                 "extra": []
             },
             {
+                "name": "Ardour",
+                "icon": "ardour",
+                "description": "Digital Audio Workstation",
+                "pkg": "org.ardour.Ardour",
+                "extra": []
+            },
+            {
                 "name": "Audacious",
                 "icon": "audacious",
                 "description": "Lightweight audio player",
                 "pkg": "org.atheme.audacious",
+                "extra": []
+            },
+            {
+                "name": "Audacity",
+                "icon": "audacity",
+                "description": "Record and edit audio files",
+                "pkg": "org.audacityteam.Audacity",
+                "extra": ["org.audacityteam.Audacity.Codecs"]
+            },
+            {
+                "name": "Ciano",
+                "icon": "audio-player",
+                "description": "A multimedia file converter",
+                "pkg": "com.github.robertsanseries.ciano",
                 "extra": []
             },
             {
@@ -47,6 +68,13 @@
                 "extra": []
             },
             {
+                "name": "EasyTAG",
+                "icon": "easytag",
+                "description": "Edit audio file metadata",
+                "pkg": "org.gnome.EasyTAG",
+                "extra": []
+            },
+            {
                 "name": "Elisa",
                 "icon": "audio-player",
                 "description": "Beautiful no-nonsense music player with online radio support",
@@ -54,7 +82,7 @@
                 "extra": []
             },
             {
-                "name": "gmusicbrowser",
+                "name": "G-Music Browser",
                 "icon": "music",
                 "description": "Jukebox for large collection of music",
                 "pkg": "org.gmusicbrowser.gmusicbrowser",
@@ -75,20 +103,6 @@
                 "extra": []
             },
             {
-                "name": "Ardour",
-                "icon": "ardour",
-                "description": "Digital Audio Workstation",
-                "pkg": "org.ardour.Ardour",
-                "extra": []
-            },
-            {
-                "name": "Audacity",
-                "icon": "audacity",
-                "description": "Record and edit audio files",
-                "pkg": "org.audacityteam.Audacity",
-                "extra": []
-            },
-            {
                 "name": "LMMS",
                 "icon": "recorder",
                 "description": "A music production application",
@@ -96,10 +110,10 @@
                 "extra": []
             },
             {
-                "name": "Ciano",
-                "icon": "audio-player",
-                "description": "A multimedia file converter",
-                "pkg": "com.github.robertsanseries.ciano",
+                "name": "MusicBrainz Picard",
+                "icon": "musicbrainz",
+                "description": "MusicBrainz's music tagger",
+                "pkg": "org.musicbrainz.Picard",
                 "extra": []
             },
             {
@@ -107,20 +121,6 @@
                 "icon": "converter",
                 "description": "Convert audio files",
                 "pkg": "org.soundconverter.SoundConverter",
-                "extra": []
-            },
-            {
-                "name": "EasyTAG",
-                "icon": "easytag",
-                "description": "Edit audio file metadata",
-                "pkg": "org.gnome.EasyTAG",
-                "extra": []
-            },
-            {
-                "name": "MusicBrainz Picard",
-                "icon": "musicbrainz",
-                "description": "MusicBrainz's music tagger",
-                "pkg": "org.musicbrainz.Picard",
                 "extra": []
             },
             {
@@ -144,20 +144,6 @@
         "icon": "applications-development",
         "description": "Development Studios",
         "apps": [
-            {
-                "name": "KDevelop",
-                "icon": "kdevelop",
-                "description": "Featureful, plugin-extensible IDE",
-                "pkg": "org.kde.kdevelop",
-                "extra": []
-            },
-            {
-                "name": "Notepadqq",
-                "icon": "notepad",
-                "description": "An advanced text editor",
-                "pkg": "com.notepadqq.Notepadqq",
-                "extra": []
-            },
             {
                 "name": "GitAhead",
                 "icon": "git",
@@ -187,9 +173,37 @@
                 "extra": []
             },
             {
+                "name": "Godot",
+                "icon": "godot",
+                "description": "Godot game engine editor",
+                "pkg": "org.godotengine.Godot",
+                "extra": []
+            },
+            {
+                "name": "KDevelop",
+                "icon": "kdevelop",
+                "description": "Featureful, plugin-extensible IDE",
+                "pkg": "org.kde.kdevelop",
+                "extra": []
+            },
+            {
+                "name": "NetBeans",
+                "icon": "notepad",
+                "description": "An Apache Java IDE. Fits the Pieces Together",
+                "pkg": "org.apache.netbeans",
+                "extra": []
+            },
+            {
+                "name": "Notepadqq",
+                "icon": "notepad",
+                "description": "An advanced text editor",
+                "pkg": "com.notepadqq.Notepadqq",
+                "extra": []
+            },
+            {
                 "name": "Obsidian",
                 "icon": "obsidian",
-                "description": "Obsidian is a powerful knowledge base that works on top of a local folder of plain text Markdown files.",
+                "description": "Markdown-based knowledge base.",
                 "pkg": "com.visualstudio.code-oss",
                 "extra": []
             },
@@ -213,20 +227,6 @@
                 "description": "VSCodium. Code editing. Redefined.",
                 "pkg": "com.vscodium.codium",
                 "extra": []
-            },
-            {
-                "name": "Godot",
-                "icon": "godot",
-                "description": "Godot game engine editor",
-                "pkg": "org.godotengine.Godot",
-                "extra": []
-            },
-            {
-                "name": "Obsidian",
-                "icon": "obsidian",
-                "description": "Markdown-based knowledge base",
-                "pkg": "md.obsidian.Obsidian",
-                "extra": []
             }
         ]
     },
@@ -236,17 +236,17 @@
         "description": "System utilities",
         "apps": [
             {
-                "name": "Raspberry Pi Imager",
-                "icon": "rpi-imager",
-                "description": "Raspberry Pi imaging utility",
-                "pkg": "org.raspberrypi.rpi-imager",
-                "extra": []
-            },
-            {
                 "name": "Disk Usage Analyzer",
                 "icon": "baobab",
                 "description": "Check folder sizes and available disk space",
                 "pkg": "org.gnome.baobab",
+                "extra": []
+            },
+            {
+                "name": "Popsicle",
+                "icon": "mintstick",
+                "description": "Linux utility for flashing multiple USB devices in parallel",
+                "pkg": "com.system76.Popsicle",
                 "extra": []
             },
             {
@@ -257,10 +257,10 @@
                 "extra": []
             },
             {
-                "name": "Popsicle",
-                "icon": "mintstick",
-                "description": "Linux utility for flashing multiple USB devices in parallel",
-                "pkg": "com.system76.Popsicle",
+                "name": "Raspberry Pi Imager",
+                "icon": "rpi-imager",
+                "description": "Raspberry Pi imaging utility",
+                "pkg": "org.raspberrypi.rpi-imager",
                 "extra": []
             },
             {
@@ -273,7 +273,70 @@
         ]
     },
     {
-        "name": "Gaming Tools",
+        "name": "Games (FOSS)",
+        "icon": "applications-games",
+        "description": "Free Open Source Games",
+        "apps": [
+            {
+                "name": "0 A.D.",
+                "icon": "zeroad",
+                "description": "Real-Time Strategy Game of Ancient Warfare",
+                "pkg": "com.play0ad.zeroad",
+                "extra": []
+            },
+            {
+                "name": "AstroMenace",
+                "icon": "astroMenace",
+                "description": "Hardcore 3D space scroll-shooter with spaceship upgrade possibilities",
+                "pkg": "com.viewizard.AstroMenace",
+                "extra": []
+            },
+            {
+                "name": "Battle for Wesnoth",
+                "icon": "applications-games",
+                "description": "A turn-based strategy game with a high fantasy theme.",
+                "pkg": "org.wesnoth.Wesnoth",
+                "extra": []
+            },
+            {
+                "name": "Chromium B.S.U.",
+                "icon": "chromium",
+                "description": "Fast paced, arcade-style, top-scrolling space shooter",
+                "pkg": "net.sourceforge.chromium-bsu",
+                "extra": []
+            },
+            {
+                "name": "OpenRA",
+                "icon": "openra",
+                "description": "Reimagining of early Westwood real-time strategy games",
+                "pkg": "net.openra.OpenRA",
+                "extra": []
+            },
+            {
+                "name": "Space Cadet Pinball",
+                "icon": "pinball",
+                "description": "Reverse engineering of 3D Pinball",
+                "pkg": "com.github.k4zmu2a.spacecadetpinball",
+                "extra": []
+            },
+            {
+                "name": "Wolfenstein: Blade of Agony",
+                "icon": "doom",
+                "description": "Story-driven FPS inspired by WWII shooters from the 90's and early 2000's",
+                "pkg": "com.realm667.Wolfenstein_Blade_of_Agony",
+                "extra": []
+            },
+            {
+                "name": "Xonotic",
+                "icon": "xonotic",
+                "description": "Multiplayer, deathmatch oriented first person shooter",
+                "pkg": "org.xonotic.Xonotic",
+                "extra": []
+            }
+        ]
+    },
+    {
+        "name": "Gaming Tools (Launchers)",
         "icon": "applications-games",
         "description": "Gaming Tools",
         "apps": [
@@ -285,10 +348,10 @@
                 "extra": []
             },
             {
-                "name": "Lutris",
-                "icon": "lutris",
-                "description": "Video game preservation platform",
-                "pkg": "net.lutris.Lutris",
+                "name": "GeForce NOW Electron",
+                "icon": "geforcenow",
+                "description": "Unofficial GeForce NOW application written in Electron",
+                "pkg": "io.github.hmlendea.geforcenow-electron",
                 "extra": []
             },
             {
@@ -296,6 +359,13 @@
                 "icon": "heroic",
                 "description": "An Open Source GOG and Epic Games Launcher.",
                 "pkg": "com.heroicgameslauncher.hgl",
+                "extra": []
+            },
+            {
+                "name": "Lutris",
+                "icon": "lutris",
+                "description": "Video game preservation platform",
+                "pkg": "net.lutris.Lutris",
                 "extra": []
             },
             {
@@ -311,18 +381,11 @@
                 "description": "Install Wine- and Proton-based compatibility tools",
                 "pkg": "net.davidotek.pupgui2",
                 "extra": []
-            },
-            {
-                "name": "GeForce NOW Electron",
-                "icon": "geforcenow",
-                "description": "Unofficial GeForce NOW application written in Electron",
-                "pkg": "io.github.hmlendea.geforcenow-electron",
-                "extra": []
             }
         ]
     },
     {
-        "name": "Gaming (Minecraft)",
+        "name": "Minecraft Tools",
         "icon": "applications-games",
         "description": "Launchers",
         "apps": [
@@ -334,20 +397,6 @@
                 "extra": []
             },
             {
-                "name": "Minecraft Bedrock Launcher",
-                "icon": "minecraft",
-                "description": "Download and play Minecraft Bedrock Edition on GNU/Linux",
-                "pkg": "io.mrarm.mcpelauncher",
-                "extra": []
-            },
-            {
-                "name": "jdMinecraftLauncher",
-                "icon": "minecraft",
-                "description": "A classic styled Minecraft Launcher",
-                "pkg": "com.gitlab.JakobDev.jdMinecraftLauncher",
-                "extra": []
-            },
-            {
                 "name": "ATLauncher",
                 "icon": "minecraft",
                 "description": "A launcher which integrates multiple different modpacks.",
@@ -355,17 +404,38 @@
                 "extra": []
             },
             {
-                "name": "GDLauncher",
+                "name": "Bedrock Launcher",
+                "icon": "minecraft",
+                "description": "Download and play Minecraft Bedrock Edition on GNU/Linux",
+                "pkg": "io.mrarm.mcpelauncher",
+                "extra": []
+            },
+            {
+                "name": "GD Launcher",
                 "icon": "minecraft",
                 "description": "This is an unofficial package. Issues with it should not be reported to GDLauncher upstream!",
                 "pkg": "io.gdevs.GDLauncher",
                 "extra": []
             },
             {
-                "name": "PolyMC",
+                "name": "jdMinecraft Launcher",
                 "icon": "minecraft",
-                "description": "A launcher that allows you to easily manage multiple installations.",
-                "pkg": "org.polymc.PolyMC",
+                "description": "A classic styled Minecraft Launcher",
+                "pkg": "com.gitlab.JakobDev.jdMinecraftLauncher",
+                "extra": []
+            },
+            {
+                "name": "Lunar Client",
+                "icon": "minecraft",
+                "description": "A modpack for all modern versions of Minecraft!",
+                "pkg": "com.lunarclient.LunarClient",
+                "extra": []
+            },
+            {
+                "name": "Modpack Manager",
+                "icon": "minecraft",
+                "description": "Manage your modpacks with ease!",
+                "pkg": "io.github.mrquantumoff.mcmodpackmanager",
                 "extra": []
             },
             {
@@ -376,7 +446,7 @@
                 "extra": []
             },
             {
-                "name": "RPMLauncher",
+                "name": "RPM Launcher",
                 "icon": "minecraft",
                 "description": "A better Minecraft Launcher that supports multiple platforms.",
                 "pkg": "ga.rpmtw.rpmlauncher",
@@ -385,7 +455,7 @@
         ]
     },
     {
-        "name": "Gaming (Retro)",
+        "name": "Retro Game Tools (Emu)",
         "icon": "applications-games",
         "description": "Retro games/emulators",
         "apps": [
@@ -411,10 +481,45 @@
                 "extra": []
             },
             {
+                "name": "DuckStation",
+                "icon": "psx",
+                "description": "PlayStation 1/PSX emulator.",
+                "pkg": "org.duckstation.DuckStation",
+                "extra": []
+            },
+            {
                 "name": "EDuke32",
                 "icon": "eduke32",
                 "description": "EDuke32 is an awesome, free homebrew game engine",
                 "pkg": "com.eduke32.EDuke32",
+                "extra": []
+            },
+            {
+                "name": "Flycast",
+                "icon": "dreamcast",
+                "description": "Sega Dreamcast, Naomi and Atomiswave emulator",
+                "pkg": "org.flycast.Flycast",
+                "extra": []
+            },
+            {
+                "name": "FS-UAE",
+                "icon": "amiga",
+                "description": "FS-UAE Amiga Emulator",
+                "pkg": "net.fsuae.FS-UAE",
+                "extra": []
+            },
+            {
+                "name": "MAME",
+                "icon": "arcade",
+                "description": "MAME is a multi-purpose emulation framework.",
+                "pkg": "org.mamedev.MAME",
+                "extra": []
+            },
+            {
+                "name": "mGBA",
+                "icon": "gameboy",
+                "description": "Nintendo Game Boy Advance Emulator",
+                "pkg": "io.mgba.mGBA",
                 "extra": []
             },
             {
@@ -446,6 +551,13 @@
                 "extra": []
             },
             {
+                "name": "SameBoy",
+                "icon": "gameboy",
+                "description": "Game Boy and Game Boy Color emulator.",
+                "pkg": "io.github.sameboy.SameBoy",
+                "extra": []
+            },
+            {
                 "name": "ScummVM",
                 "icon": "scummvm",
                 "description": "Interpreter for numerous adventure games and role-playing games.",
@@ -457,6 +569,13 @@
                 "icon": "nintendo",
                 "description": "A freeware Super Nintendo Entertainment System (SNES) emulator.",
                 "pkg": "com.snes9x.Snes9x",
+                "extra": []
+            },
+            {
+                "name": "Stella",
+                "icon": "atari",
+                "description": "Multi-platform Atari 2600 VCS emulator.",
+                "pkg": "io.github.stella_emu.Stella",
                 "extra": []
             },
             {
@@ -481,14 +600,14 @@
                 "extra": []
             },
             {
-                "name": "darktable",
+                "name": "Darktable",
                 "icon": "darktable",
                 "description": "Organize and develop images from digital cameras",
                 "pkg": "org.darktable.Darktable",
                 "extra": []
             },
             {
-                "name": "digiKam",
+                "name": "DigiKam",
                 "icon": "digikam",
                 "description": "Photo Management Program",
                 "pkg": "org.kde.digikam",
@@ -544,6 +663,20 @@
                 "extra": []
             },
             {
+                "name": "Microsoft Edge",
+                "icon": "microsoft-edge",
+                "description": "Browser",
+                "pkg": "com.microsoft.Edge",
+                "extra": []
+            },
+            {
+                "name": "Tor Browser Launcher",
+                "icon": "tor-browser",
+                "description": "The Tor Browser Bundle",
+                "pkg": "com.github.micahflee.torbrowser-launcher",
+                "extra": []
+            },
+            {
                 "name": "Evolution",
                 "icon": "evolution",
                 "description": "Manage your email, contacts and schedule",
@@ -555,13 +688,6 @@
                 "icon": "geary",
                 "description": "Send and receive mail",
                 "pkg": "org.gnome.Geary",
-                "extra": []
-            },
-            {
-                "name": "BlueMail",
-                "icon": "email",
-                "description": "BlueMail by Blix is a free, beautifully designed, universal email app",
-                "pkg": "flathub net.blix.BlueMail",
                 "extra": []
             },
             {
@@ -579,17 +705,17 @@
                 "extra": []
             },
             {
+                "name": "Caprine",
+                "icon": "caprine",
+                "description": "Elegant Facebook Messenger desktop app",
+                "pkg": "com.sindresorhus.Caprine",
+                "extra": []
+            },
+            {
                 "name": "Discord",
                 "icon": "discord",
                 "description": "Messaging, Voice, and Video Client",
                 "pkg": "com.discordapp.Discord",
-                "extra": []
-            },
-            {
-                "name": "WebCord",
-                "icon": "discord",
-                "description": "A Discord and Fosscord client in electron",
-                "pkg": "io.github.spacingbat3.webcord",
                 "extra": []
             },
             {
@@ -621,6 +747,13 @@
                 "extra": []
             },
             {
+                "name": "Mattermost",
+                "icon": "mattermost",
+                "description": "An open source platform for developer collaboration.",
+                "pkg": "com.mattermost.Desktop",
+                "extra": []
+            },
+            {
                 "name": "Mumble",
                 "icon": "mumble",
                 "description": "Low latency encrypted VoIP client",
@@ -646,6 +779,27 @@
                 "icon": "telegram-desktop",
                 "description": "Official Telegram Desktop client",
                 "pkg": "org.telegram.desktop",
+                "extra": []
+            },
+            {
+                "name": "Slack",
+                "icon": "slack",
+                "description": "Chat with your team",
+                "pkg": "com.slack.Slack",
+                "extra": []
+            },
+            {
+                "name": "WhatsApp Desktop",
+                "icon": "whatsapp-desktop",
+                "description": "Unofficial WhatsApp Web Desktop client.",
+                "pkg": "io.github.mimbrero.WhatsAppDesktop",
+                "extra": []
+            },
+            {
+                "name": "WebCord",
+                "icon": "discord",
+                "description": "A Discord and Fosscord client in electron",
+                "pkg": "io.github.spacingbat3.webcord",
                 "extra": []
             },
             {
@@ -698,13 +852,6 @@
                 "extra": []
             },
             {
-                "name": "Slack",
-                "icon": "slack",
-                "description": "Chat with your team",
-                "pkg": "com.slack.Slack",
-                "extra": []
-            },
-            {
                 "name": "Motrix",
                 "icon": "motrix",
                 "description": "A full-featured download manager",
@@ -719,27 +866,6 @@
                 "extra": []
             },
             {
-                "name": "Caprine",
-                "icon": "caprine",
-                "description": "Elegant Facebook Messenger desktop app",
-                "pkg": "com.sindresorhus.Caprine",
-                "extra": []
-            },
-            {
-                "name": "Mattermost",
-                "icon": "mattermost",
-                "description": "An open source platform for developer collaboration.",
-                "pkg": "com.mattermost.Desktop",
-                "extra": []
-            },
-            {
-                "name": "WhatsApp Desktop",
-                "icon": "whatsapp-desktop",
-                "description": "Unofficial WhatsApp Web Desktop client.",
-                "pkg": "io.github.mimbrero.WhatsAppDesktop",
-                "extra": []
-            },
-            {
                 "name": "VGrive",
                 "icon": "vgrive",
                 "description": "Google Drive client",
@@ -751,20 +877,6 @@
                 "icon": "tangram",
                 "description": "Tangram is a new kind of browser. It is designed to organize and run your Web applications.",
                 "pkg": "flathub re.sonny.Tangram",
-                "extra": []
-            },
-            {
-                "name": "Microsoft Edge",
-                "icon": "microsoft-edge",
-                "description": "Browser",
-                "pkg": "com.microsoft.Edge",
-                "extra": []
-            },
-            {
-                "name": "Tor Browser Launcher",
-                "icon": "tor-browser",
-                "description": "The Tor Browser Bundle",
-                "pkg": "com.github.micahflee.torbrowser-launcher",
                 "extra": []
             }
         ]
@@ -782,17 +894,17 @@
                 "extra": []
             },
             {
-                "name": "WPS Office",
-                "icon": "ms-word",
-                "description": "An office productivity suite.",
-                "pkg": "com.wps.Office",
-                "extra": []
-            },
-            {
                 "name": "Simplenote",
                 "icon": "simplenote",
                 "description": "The simplest way to keep notes",
                 "pkg": "com.simplenote.Simplenote",
+                "extra": []
+            },
+            {
+                "name": "WPS Office",
+                "icon": "ms-word",
+                "description": "An office productivity suite.",
+                "pkg": "com.wps.Office",
                 "extra": []
             }
         ]
@@ -861,15 +973,43 @@
         ]
     },
     {
-        "name": "System",
+        "name": "System Tools",
         "icon": "applications-system",
         "description": "System utilities",
         "apps": [
+            {
+                "name": "Basilisk II",
+                "icon": "apple",
+                "description": "A 68k Macintosh emulator",
+                "pkg": "net.cebix.basilisk",
+                "extra": []
+            },
             {
                 "name": "Firmware",
                 "icon": "application-x-firmware",
                 "description": "Install firmware on devices",
                 "pkg": "org.gnome.Firmware",
+                "extra": []
+            },
+            {
+                "name": "GPU-Viewer",
+                "icon": "gnome-computer",
+                "description": "A front-end to glxinfo, vulkaninfo, clinfo and es2_info",
+                "pkg": "io.github.arunsivaramanneo.GPUViewer",
+                "extra": []
+            },
+            {
+                "name": "HydraPaper",
+                "icon": "gnome-computer",
+                "description": "Wallpaper manager with multi monitor support",
+                "pkg": "org.gabmus.hydrapaper",
+                "extra": []
+            },
+            {
+                "name": "Metadata Cleaner",
+                "icon": "text",
+                "description": "View and clean metadata in files",
+                "pkg": "fr.romainvigier.MetadataCleaner",
                 "extra": []
             },
             {
@@ -884,13 +1024,6 @@
                 "icon": "podman",
                 "description": "Manage Podman and other container engines from a single UI and tray.",
                 "pkg": "io.podman_desktop.PodmanDesktop",
-                "extra": []
-            },
-            {
-                "name": "HydraPaper",
-                "icon": "gnome-computer",
-                "description": "Wallpaper manager with multi monitor support",
-                "pkg": "org.gabmus.hydrapaper",
                 "extra": []
             },
             {
@@ -922,17 +1055,31 @@
         "description": "Organize and play videos and movies",
         "apps": [
             {
-                "name": "Plex",
-                "icon": "plex",
-                "description": "Plex client for desktop computers",
-                "pkg": "tv.plex.PlexDesktop",
+                "name": "Avidemux",
+                "icon": "avidemux",
+                "description": "Multi-purpose video editing and processing software",
+                "pkg": "org.avidemux.Avidemux",
                 "extra": []
             },
             {
-                "name": "Plex HTPC",
-                "icon": "plex-htpc",
-                "description": "Plex HTPC client for the big screen",
-                "pkg": "tv.plex.PlexHTPC",
+                "name": "FileBot",
+                "icon": "filebot",
+                "description": "The ultimate TV and Movie Renamer",
+                "pkg": "net.filebot.FileBot",
+                "extra": []
+            },
+            {
+                "name": "HandBrake",
+                "icon": "handbrake",
+                "description": "Video Transcoder",
+                "pkg": "fr.handbrake.ghb",
+                "extra": []
+            },
+            {
+                "name": "KdenLive",
+                "icon": "kdenlive",
+                "description": "Kdenlive is a non linear video editor. It is based on the MLT framework",
+                "pkg": "flathub org.kde.kdenlive",
                 "extra": []
             },
             {
@@ -943,10 +1090,73 @@
                 "extra": []
             },
             {
-                "name": "mpv",
+                "name": "MakeMKV",
+                "icon": "makemkv",
+                "description": "DVD and Blu-ray to MKV converter and network streamer",
+                "pkg": "com.makemkv.MakeMKV",
+                "extra": []
+            },
+            {
+                "name": "MediaInfo",
+                "icon": "mediainfo",
+                "description": "Convenient unified display of technical/tag data for video and audio files",
+                "pkg": "net.mediaarea.MediaInfo",
+                "extra": []
+            },
+            {
+                "name": "MKVToolNix",
+                "icon": "mkvtoolnix-gui",
+                "description": "Matroska files creator and tools",
+                "pkg": "org.bunkus.mkvtoolnix-gui",
+                "extra": []
+            },
+            {
+                "name": "MoonPlayer",
+                "icon": "MoonPlayer",
+                "description": "Video player for playing/downloading online videos from YouTube, Youku etc.",
+                "pkg": "com.github.coslyk.MoonPlayer",
+                "extra": []
+            },
+            {
+                "name": "MPV",
                 "icon": "mpv",
                 "description": "A free, open source, and cross-platform media player",
                 "pkg": "io.mpv.Mpv",
+                "extra": []
+            },
+            {
+                "name": "OBS Studio",
+                "icon": "obs",
+                "description": "Live streaming and video recording software",
+                "pkg": "com.obsproject.Studio",
+                "extra": ["com.obsproject.Studio.Plugin.OBSVkCapture","com.obsproject.Studio.Plugin.Gstreamer","com.obsproject.Studio.Plugin.TransitionTable","com.obsproject.Studio.Plugin.waveform","com.obsproject.Studio.Plugin.InputOverlay","com.obsproject.Studio.Plugin.SceneSwitcher","com.obsproject.Studio.Plugin.MoveTransition","com.obsproject.Studio.Plugin.ScaleToSound","com.obsproject.Studio.Plugin.NVFBC","com.obsproject.Studio.Plugin.WebSocket"]
+            },
+            {
+                "name": "OpenShot Video Editor",
+                "icon": "openshot",
+                "description": "An easy to use, quick to learn, and surprisingly powerful video editor",
+                "pkg": "org.openshot.OpenShot",
+                "extra": []
+            },
+            {
+                "name": "Pitivi",
+                "icon": "pitivi",
+                "description": "Create and edit your own movies",
+                "pkg": "org.pitivi.Pitivi",
+                "extra": []
+            },
+            {
+                "name": "Plex HTPC",
+                "icon": "plex-htpc",
+                "description": "Plex HTPC client for the big screen",
+                "pkg": "tv.plex.PlexHTPC",
+                "extra": ["tv.plex.PlexDesktop"]
+            },
+            {
+                "name": "Shotcut",
+                "icon": "shotcut",
+                "description": "Video editor",
+                "pkg": "org.shotcut.Shotcut",
                 "extra": []
             },
             {
@@ -964,94 +1174,10 @@
                 "extra": []
             },
             {
-                "name": "OBS Studio",
-                "icon": "obs",
-                "description": "Live streaming and video recording software",
-                "pkg": "com.obsproject.Studio",
-                "extra": ["com.obsproject.Studio.Plugin.OBSVkCapture","com.obsproject.Studio.Plugin.Gstreamer","com.obsproject.Studio.Plugin.TransitionTable","com.obsproject.Studio.Plugin.waveform","com.obsproject.Studio.Plugin.InputOverlay","com.obsproject.Studio.Plugin.SceneSwitcher","com.obsproject.Studio.Plugin.MoveTransition","com.obsproject.Studio.Plugin.ScaleToSound","com.obsproject.Studio.Plugin.NVFBC","com.obsproject.Studio.Plugin.WebSocket"]
-            },
-            {
-                "name": "KdenLive",
-                "icon": "kdenlive",
-                "description": "Kdenlive is a non linear video editor. It is based on the MLT framework",
-                "pkg": "flathub org.kde.kdenlive",
-                "extra": []
-            },
-            {
-                "name": "OpenShot Video Editor",
-                "icon": "openshot",
-                "description": "An easy to use, quick to learn, and surprisingly powerful video editor",
-                "pkg": "org.openshot.OpenShot",
-                "extra": []
-            },
-            {
-                "name": "Pitivi",
-                "icon": "pitivi",
-                "description": "Create and edit your own movies",
-                "pkg": "org.pitivi.Pitivi",
-                "extra": []
-            },
-            {
-                "name": "Shotcut",
-                "icon": "shotcut",
-                "description": "Video editor",
-                "pkg": "org.shotcut.Shotcut",
-                "extra": []
-            },
-            {
-                "name": "HandBrake",
-                "icon": "handbrake",
-                "description": "Video Transcoder",
-                "pkg": "fr.handbrake.ghb",
-                "extra": []
-            },
-            {
-                "name": "MakeMKV",
-                "icon": "makemkv",
-                "description": "DVD and Blu-ray to MKV converter and network streamer",
-                "pkg": "com.makemkv.MakeMKV",
-                "extra": []
-            },
-            {
-                "name": "MKVToolNix",
-                "icon": "mkvtoolnix-gui",
-                "description": "Matroska files creator and tools",
-                "pkg": "org.bunkus.mkvtoolnix-gui",
-                "extra": []
-            },
-            {
-                "name": "FileBot",
-                "icon": "filebot",
-                "description": "The ultimate TV and Movie Renamer",
-                "pkg": "net.filebot.FileBot",
-                "extra": []
-            },
-            {
-                "name": "MediaInfo",
-                "icon": "mediainfo",
-                "description": "Convenient unified display of technical/tag data for video and audio files",
-                "pkg": "net.mediaarea.MediaInfo",
-                "extra": []
-            },
-            {
-                "name": "youtubedl-gui",
+                "name": "YouTube-DL GUI",
                 "icon": "youtubedl-gui",
                 "description": "A simple-to-use, cross-platform graphical interface for youtube-dl.",
                 "pkg": "io.github.JaGoLi.ytdl_gui",
-                "extra": []
-            },
-            {
-                "name": "MoonPlayer",
-                "icon": "MoonPlayer",
-                "description": "Video player for playing/downloading online videos from YouTube, Youku etc.",
-                "pkg": "com.github.coslyk.MoonPlayer",
-                "extra": []
-            },
-            {
-                "name": "Avidemux",
-                "icon": "avidemux",
-                "description": "Multi-purpose video editing and processing software",
-                "pkg": "org.avidemux.Avidemux",
                 "extra": []
             }
         ]

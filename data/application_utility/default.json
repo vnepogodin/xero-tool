@@ -82,10 +82,17 @@
                 "extra": []
             },
             {
-                "name": "glava",
+                "name": "Glava",
                 "icon": "qtspectrumanalyzer",
                 "description": "Dynamic",
                 "pkg": "glava",
+                "extra": []
+            },
+            {
+                "name": "James DSP",
+                "icon": "lxmusic",
+                "description": "Dynamic",
+                "pkg": "jamesdsp",
                 "extra": []
             },
             {
@@ -93,6 +100,13 @@
                 "icon": "kwave",
                 "description": "Dynamic",
                 "pkg": "kwave",
+                "extra": []
+            },
+            {
+                "name": "Noisetorch",
+                "icon": "noise",
+                "description": "Dynamic",
+                "pkg": "noisetorch",
                 "extra": []
             },
             {
@@ -121,20 +135,6 @@
                 "icon": "spotify",
                 "description": "Dynamic",
                 "pkg": "spotify-adblock",
-                "extra": []
-            },
-            {
-                "name": "James DSP",
-                "icon": "lxmusic",
-                "description": "Dynamic",
-                "pkg": "jamesdsp",
-                "extra": []
-            },
-            {
-                "name": "Noisetorch",
-                "icon": "noise",
-                "description": "Dynamic",
-                "pkg": "noisetorch",
                 "extra": []
             }
         ]
@@ -321,17 +321,17 @@
                 "extra": []
             },
             {
-                "name": "T-Launcher",
-                "icon": "tlauncher",
-                "description": "Dynamic",
-                "pkg": "tlauncher",
-                "extra": []
-            },
-            {
                 "name": "Steam Native",
                 "icon": "steam",
                 "description": "Dynamic",
                 "pkg": "steam-native-runtime",
+                "extra": []
+            },
+            {
+                "name": "T-Launcher",
+                "icon": "tlauncher",
+                "description": "Dynamic",
+                "pkg": "tlauncher",
                 "extra": []
             }
         ]
@@ -440,7 +440,7 @@
                 "extra": []
             },
             {
-                "name": "rclone",
+                "name": "RClone",
                 "icon": "googledrive",
                 "description": "Dynamic",
                 "pkg": "rclone",
@@ -650,7 +650,7 @@
         "description": "Extra Terminal Emulators",
         "apps": [
             {
-                "name": "alacritty",
+                "name": "Alacritty",
                 "icon": "alacritty",
                 "description": "Dynamic",
                 "pkg": "alacritty",
@@ -685,6 +685,13 @@
         "description": "Tools that run in Terminal",
         "apps": [
             {
+                "name": "Bash Pipes",
+                "icon": "pipes",
+                "description": "Dynamic",
+                "pkg": "bash-pipes",
+                "extra": []
+            },
+            {
                 "name": "Btop",
                 "icon": "btop",
                 "description": "Dynamic",
@@ -692,17 +699,10 @@
                 "extra": []
             },
             {
-                "name": "Gotop",
-                "icon": "gotop",
+                "name": "Cava",
+                "icon": "music",
                 "description": "Dynamic",
-                "pkg": "gotop",
-                "extra": []
-            },
-            {
-                "name": "nVtops",
-                "icon": "nvtop",
-                "description": "Dynamic",
-                "pkg": "nvtop",
+                "pkg": "cava",
                 "extra": []
             },
             {
@@ -720,17 +720,17 @@
                 "extra": []
             },
             {
-                "name": "Bash Pipes",
-                "icon": "pipes",
+                "name": "FM-6000",
+                "icon": "terminal",
                 "description": "Dynamic",
-                "pkg": "bash-pipes",
+                "pkg": "fm6000",
                 "extra": []
             },
             {
-                "name": "Cava",
-                "icon": "music",
+                "name": "Gotop",
+                "icon": "gotop",
                 "description": "Dynamic",
-                "pkg": "cava",
+                "pkg": "gotop",
                 "extra": []
             },
             {
@@ -741,10 +741,10 @@
                 "extra": ["cmatrix"]
             },
             {
-                "name": "FM-6000",
-                "icon": "terminal",
+                "name": "nVtops",
+                "icon": "nvtop",
                 "description": "Dynamic",
-                "pkg": "fm6000",
+                "pkg": "nvtop",
                 "extra": []
             },
             {
@@ -776,10 +776,24 @@
                 "extra": []
             },
             {
-                "name": "Simple Screen Recorder",
-                "icon": "simplescreenrecorder",
+                "name": "Hypnotix",
+                "icon": "video",
                 "description": "Dynamic",
-                "pkg": "simplescreenrecorder",
+                "pkg": "hypnotix",
+                "extra": []
+            },
+            {
+                "name": "Media Downloader",
+                "icon": "youtube",
+                "description": "Dynamic",
+                "pkg": "media-downloader",
+                "extra": ["yt-dlp"]
+            },
+            {
+                "name": "Mystiq",
+                "icon": "mystiq",
+                "description": "Dynamic",
+                "pkg": "mystiq",
                 "extra": []
             },
             {
@@ -790,25 +804,11 @@
                 "extra": ["plex-media-player"]
             },
             {
-                "name": "Hypnotix",
-                "icon": "video",
+                "name": "Simple Screen Recorder",
+                "icon": "simplescreenrecorder",
                 "description": "Dynamic",
-                "pkg": "hypnotix",
+                "pkg": "simplescreenrecorder",
                 "extra": []
-            },
-            {
-                "name": "Mystiq",
-                "icon": "mystiq",
-                "description": "Dynamic",
-                "pkg": "mystiq",
-                "extra": []
-            },
-            {
-                "name": "Media Downloader (Front-end)",
-                "icon": "youtube",
-                "description": "Dynamic",
-                "pkg": "media-downloader",
-                "extra": ["yt-dlp"]
             },
             {
                 "name": "Twitch DL",
