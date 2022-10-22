@@ -89,20 +89,6 @@
                 "extra": []
             },
             {
-                "name": "Spotify",
-                "icon": "spotify-client",
-                "description": "Online music streaming service",
-                "pkg": "com.spotify.Client",
-                "extra": []
-            },
-            {
-                "name": "Tauon Music Box",
-                "icon": "audio-player",
-                "description": "Play your music with style",
-                "pkg": "com.github.taiko2k.tauonmb",
-                "extra": []
-            },
-            {
                 "name": "LMMS",
                 "icon": "lmms",
                 "description": "A music production application",
@@ -124,6 +110,13 @@
                 "extra": []
             },
             {
+                "name": "Spotify",
+                "icon": "spotify-client",
+                "description": "Online music streaming service",
+                "pkg": "com.spotify.Client",
+                "extra": []
+            },
+            {
                 "name": "Rhythmbox",
                 "icon": "audio-player",
                 "description": "Play and organize your music collection",
@@ -135,6 +128,20 @@
                 "icon": "sound",
                 "description": "A cross-platform soundboard",
                 "pkg": "io.github.Soundux",
+                "extra": []
+            },
+            {
+                "name": "Tagger",
+                "icon": "easytag",
+                "description": "An easy-to-use music tag (metadata) editor",
+                "pkg": "org.nickvision.tagger",
+                "extra": []
+            },
+            {
+                "name": "Tauon Music Box",
+                "icon": "audio-player",
+                "description": "Play your music with style",
+                "pkg": "com.github.taiko2k.tauonmb",
                 "extra": []
             }
         ]
@@ -1171,6 +1178,20 @@
                 "icon": "stremio",
                 "description": "Watch videos, movies, TV series and TV channels instantly.",
                 "pkg": "com.stremio.Stremio",
+                "extra": []
+            },
+            {
+                "name": "Tube Converter (Downloader)",
+                "icon": "youtube",
+                "description": "An easy-to-use YouTube video downloader",
+                "pkg": "org.nickvision.tagger",
+                "extra": []
+            },
+            {
+                "name": "Video Trimmer",
+                "icon": "vidcutter",
+                "description": "Trim videos quickly",
+                "pkg": "org.gnome.gitlab.YaLTeR.VideoTrimmer",
                 "extra": []
             },
             {
