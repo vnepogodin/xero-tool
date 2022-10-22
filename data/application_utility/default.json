@@ -681,7 +681,7 @@
     },
     {
         "name": "Terminal Utilities",
-        "icon": "tui",
+        "icon": "terminix",
         "description": "Tools that run in Terminal",
         "apps": [
             {

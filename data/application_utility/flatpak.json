@@ -468,7 +468,7 @@
         "apps": [
             {
                 "name": "Citra",
-                "icon": "citra",
+                "icon": "drive-optical",
                 "description": "Nintendo 3DS emulator",
                 "pkg": "org.citra_emu.citra",
                 "extra": []
