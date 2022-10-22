@@ -5,8 +5,8 @@ use crate::utils;
 use gio::prelude::*;
 use gtk::prelude::{
     BoxExt, ButtonExt, CellRendererExt, CellRendererToggleExt, ComboBoxExt, ContainerExt, GridExt,
-    GtkListStoreExt, GtkListStoreExtManual, ScrolledWindowExt, ToggleButtonExt, TreeModelExt,
-    TreeStoreExt, TreeStoreExtManual, TreeViewColumnExt, TreeViewExt, WidgetExt,
+    GtkListStoreExt, GtkListStoreExtManual, LabelExt, ScrolledWindowExt, ToggleButtonExt,
+    TreeModelExt, TreeStoreExt, TreeStoreExtManual, TreeViewColumnExt, TreeViewExt, WidgetExt,
 };
 
 use once_cell::sync::Lazy;
@@ -57,6 +57,16 @@ impl ApplicationBrowser {
         app_browser_box.set_expand(true);
 
         let button_box = gtk::Box::new(gtk::Orientation::Horizontal, 10);
+        let info_label = gtk::Label::with_mnemonic(
+            r#"
+- Choosing Right Packages :
+
+This is where you will be able to select what packages you want to install. We have spent a long time curating a list of interesting Tools for you to enjoy. (Will be constantly updated)
+
+However, this first page mostly includes packages either from our Repos or ArchLinux ones (Mostly System Tools n Tweaks). Since we aim at stability, we opted to offer the important stuff as Flatpaks, so hit the  button below labeled as such to switch, and find them there. If you dislike Flatpaks, you are free to install packages from whatever other sources you want, it's all up to you. Have fun !
+"#,
+        );
+        info_label.set_line_wrap(true);
         let flatpak_button = gtk::ToggleButton::with_label("Use Flatpak");
         flatpak_button.set_tooltip_text(Some("Use Flatpak pkg when available"));
         flatpak_button.connect_clicked(on_flatpak_clicked);
@@ -81,6 +91,7 @@ impl ApplicationBrowser {
         button_box.pack_end(&update_system_btn, false, false, 10);
 
         // button_box.pack_end(&download_button, false, false, 10);
+        app_browser_box.pack_start(&info_label, false, false, 2);
         app_browser_box.pack_start(&button_box, false, false, 10);
 
         let col_types: [glib::Type; 7] = [
