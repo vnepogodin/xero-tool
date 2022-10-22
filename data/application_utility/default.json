@@ -29,12 +29,12 @@
     },
     {
         "name": "Android Tools",
-        "icon": "android",
+        "icon": "anbox",
         "description": "Various tools for Android",
         "apps": [
             {
                 "name": "Android Tools",
-                "icon": "android",
+                "icon": "usbimager",
                 "description": "Dynamic.",
                 "pkg": "android-tools",
                 "extra": []
@@ -54,7 +54,7 @@
                 "extra": []
             },
             {
-                "name": "android-sdk-platform-tools",
+                "name": "Android SDK Tools",
                 "icon": "androidstudio",
                 "description": "Dynamic",
                 "pkg": "android-sdk-platform-tools",
@@ -82,10 +82,17 @@
                 "extra": []
             },
             {
-                "name": "glava",
-                "icon": "qtspectrumanalyzer",
+                "name": "Glava",
+                "icon": "music_icon-24",
                 "description": "Dynamic",
                 "pkg": "glava",
+                "extra": []
+            },
+            {
+                "name": "James DSP",
+                "icon": "lxmusic",
+                "description": "Dynamic",
+                "pkg": "jamesdsp",
                 "extra": []
             },
             {
@@ -93,6 +100,13 @@
                 "icon": "kwave",
                 "description": "Dynamic",
                 "pkg": "kwave",
+                "extra": []
+            },
+            {
+                "name": "Noisetorch",
+                "icon": "noise",
+                "description": "Dynamic",
+                "pkg": "noisetorch",
                 "extra": []
             },
             {
@@ -121,20 +135,6 @@
                 "icon": "spotify",
                 "description": "Dynamic",
                 "pkg": "spotify-adblock",
-                "extra": []
-            },
-            {
-                "name": "James DSP",
-                "icon": "lxmusic",
-                "description": "Dynamic",
-                "pkg": "jamesdsp",
-                "extra": []
-            },
-            {
-                "name": "Noisetorch",
-                "icon": "noise",
-                "description": "Dynamic",
-                "pkg": "noisetorch",
                 "extra": []
             }
         ]
@@ -223,7 +223,7 @@
             },
             {
                 "name": "Hugo",
-                "icon": "webbrowser",
+                "icon": "webide",
                 "description": "Dynamic",
                 "pkg": "hugo",
                 "extra": []
@@ -315,16 +315,9 @@
 
             {
                 "name": "Mangohud",
-                "icon": "games",
+                "icon": "help-info",
                 "description": "Dynamic",
                 "pkg": "mangohud",
-                "extra": []
-            },
-            {
-                "name": "T-Launcher",
-                "icon": "tlauncher",
-                "description": "Dynamic",
-                "pkg": "tlauncher",
                 "extra": []
             },
             {
@@ -332,6 +325,13 @@
                 "icon": "steam",
                 "description": "Dynamic",
                 "pkg": "steam-native-runtime",
+                "extra": []
+            },
+            {
+                "name": "T-Launcher",
+                "icon": "tlauncher",
+                "description": "Dynamic",
+                "pkg": "tlauncher",
                 "extra": []
             }
         ]
@@ -364,7 +364,7 @@
         "apps": [
             {
                 "name": "Netsurf",
-                "icon": "web",
+                "icon": "net.xmind.XMind",
                 "description": "Dynamic",
                 "pkg": "netsurf",
                 "extra": []
@@ -388,13 +388,6 @@
                 "icon": "waterfox",
                 "description": "Dynamic",
                 "pkg": "waterfox-g4-bin",
-                "extra": []
-            },
-            {
-                "name": "Tangram",
-                "icon": "tangram",
-                "description": "Dynamic",
-                "pkg": "tangram",
                 "extra": []
             },
             {
@@ -434,7 +427,7 @@
             },
             {
                 "name": "Nitroshare",
-                "icon": "nitroshare",
+                "icon": "neversong",
                 "description": "Dynamic",
                 "pkg": "nitroshare",
                 "extra": []
@@ -447,7 +440,7 @@
                 "extra": []
             },
             {
-                "name": "rclone",
+                "name": "RClone",
                 "icon": "googledrive",
                 "description": "Dynamic",
                 "pkg": "rclone",
@@ -504,7 +497,7 @@
         "apps": [
             {
                 "name": "Aura",
-                "icon": "aura",
+                "icon": "beagled",
                 "description": "Dynamic",
                 "pkg": "aura-bin",
                 "extra": []
@@ -518,7 +511,7 @@
             },
             {
                 "name": "Discover",
-                "icon": "discover",
+                "icon": "org.kde.discover",
                 "description": "Dynamic",
                 "pkg": "discover",
                 "extra": []
@@ -553,7 +546,7 @@
         "apps": [
             {
                 "name": "Auto CPU Freq",
-                "icon": "power",
+                "icon": "cpuinfo",
                 "description": "Dynamic",
                 "pkg": "auto-cpufreq",
                 "extra": []
@@ -567,14 +560,14 @@
             },
             {
                 "name": "System76 Power",
-                "icon": "power",
+                "icon": "system76-driver",
                 "description": "Dynamic",
                 "pkg": "system76-power",
                 "extra": []
             },
             {
                 "name": "TLP",
-                "icon": "tlp",
+                "icon": "battery",
                 "description": "Dynamic",
                 "pkg": "tlp",
                 "extra": []
@@ -583,7 +576,7 @@
     },
     {
         "name": "Remote Desktop",
-        "icon": "vnc",
+        "icon": "remote-desktop",
         "description": "Remote Desktop Tools",
         "apps": [
             {
@@ -595,14 +588,14 @@
             },
             {
                 "name": "No Machine",
-                "icon": "nomachine",
+                "icon": "remmina",
                 "description": "Dynamic",
                 "pkg": "nomachine",
                 "extra": []
             },
             {
                 "name": "RealVNC Server",
-                "icon": "vnc",
+                "icon": "remote-desktop",
                 "description": "Dynamic",
                 "pkg": "realvnc-vnc-server",
                 "extra": ["realvnc-vnc-viewer"]
@@ -618,19 +611,19 @@
     },
     {
         "name": "Ricing",
-        "icon": "art",
+        "icon": "theme-config",
         "description": "Tools That Will Help With Ricing",
         "apps": [
             {
                 "name": "KonSave",
-                "icon": "gears",
+                "icon": "terminal",
                 "description": "Dynamic",
                 "pkg": "konsave",
                 "extra": []
             },
             {
                 "name": "Variety",
-                "icon": "wallpapers",
+                "icon": "wallpaper",
                 "description": "Dynamic",
                 "pkg": "variety",
                 "extra": []
@@ -644,7 +637,7 @@
             },
             {
                 "name": "XScreensaver",
-                "icon": "screen",
+                "icon": "screensaver",
                 "description": "Dynamic",
                 "pkg": "xscreensaver",
                 "extra": []
@@ -653,11 +646,11 @@
     },
     {
         "name": "Terminal Emulators",
-        "icon": "konsole",
+        "icon": "terminix",
         "description": "Extra Terminal Emulators",
         "apps": [
             {
-                "name": "alacritty",
+                "name": "Alacritty",
                 "icon": "alacritty",
                 "description": "Dynamic",
                 "pkg": "alacritty",
@@ -688,49 +681,21 @@
     },
     {
         "name": "Terminal Utilities",
-        "icon": "tui",
+        "icon": "terminix",
         "description": "Tools that run in Terminal",
         "apps": [
+            {
+                "name": "Bash Pipes",
+                "icon": "bash",
+                "description": "Dynamic",
+                "pkg": "bash-pipes",
+                "extra": []
+            },
             {
                 "name": "Btop",
                 "icon": "btop",
                 "description": "Dynamic",
                 "pkg": "btop",
-                "extra": []
-            },
-            {
-                "name": "Gotop",
-                "icon": "gotop",
-                "description": "Dynamic",
-                "pkg": "gotop",
-                "extra": []
-            },
-            {
-                "name": "nVtops",
-                "icon": "nvtop",
-                "description": "Dynamic",
-                "pkg": "nvtop",
-                "extra": []
-            },
-            {
-                "name": "CPU Fetch",
-                "icon": "cpufetch",
-                "description": "Dynamic",
-                "pkg": "cpufetch",
-                "extra": []
-            },
-            {
-                "name": "CPU-ID",
-                "icon": "cpuid",
-                "description": "Dynamic",
-                "pkg": "cpuid",
-                "extra": []
-            },
-            {
-                "name": "Bash Pipes",
-                "icon": "pipes",
-                "description": "Dynamic",
-                "pkg": "bash-pipes",
                 "extra": []
             },
             {
@@ -741,17 +706,45 @@
                 "extra": []
             },
             {
+                "name": "CPU Fetch",
+                "icon": "cpuinfo",
+                "description": "Dynamic",
+                "pkg": "cpufetch",
+                "extra": []
+            },
+            {
+                "name": "CPU-ID",
+                "icon": "cpuinfo",
+                "description": "Dynamic",
+                "pkg": "cpuid",
+                "extra": []
+            },
+            {
+                "name": "FM-6000",
+                "icon": "termius",
+                "description": "Dynamic",
+                "pkg": "fm6000",
+                "extra": []
+            },
+            {
+                "name": "Gotop",
+                "icon": "btop",
+                "description": "Dynamic",
+                "pkg": "gotop",
+                "extra": []
+            },
+            {
                 "name": "Neo Matrix",
-                "icon": "matrix",
+                "icon": "maui-station",
                 "description": "Dynamic",
                 "pkg": "neo-matrix",
                 "extra": ["cmatrix"]
             },
             {
-                "name": "FM-6000",
-                "icon": "terminal",
+                "name": "nVtop",
+                "icon": "nvclock",
                 "description": "Dynamic",
-                "pkg": "fm6000",
+                "pkg": "nvtop",
                 "extra": []
             },
             {
@@ -783,32 +776,18 @@
                 "extra": []
             },
             {
-                "name": "Kden Live",
-                "icon": "kdenlive",
-                "description": "Dynamic",
-                "pkg": "kdenlive",
-                "extra": []
-            },
-            {
-                "name": "Simple Screen Recorder",
-                "icon": "simplescreenrecorder",
-                "description": "Dynamic",
-                "pkg": "simplescreenrecorder",
-                "extra": []
-            },
-            {
-                "name": "Plex Media Server",
-                "icon": "plex",
-                "description": "Dynamic",
-                "pkg": "plex-media-server",
-                "extra": ["plex-media-player"]
-            },
-            {
                 "name": "Hypnotix",
                 "icon": "video",
                 "description": "Dynamic",
                 "pkg": "hypnotix",
                 "extra": []
+            },
+            {
+                "name": "Media Downloader",
+                "icon": "youtube",
+                "description": "Dynamic",
+                "pkg": "media-downloader",
+                "extra": ["yt-dlp"]
             },
             {
                 "name": "Mystiq",
@@ -818,24 +797,24 @@
                 "extra": []
             },
             {
-                "name": "Media Downloader (Front-end)",
-                "icon": "youtube",
+                "name": "Plex Media Server",
+                "icon": "pnmixer",
                 "description": "Dynamic",
-                "pkg": "media-downloader",
+                "pkg": "plex-media-server",
+                "extra": ["plex-media-player"]
+            },
+            {
+                "name": "Simple Screen Recorder",
+                "icon": "simplescreenrecorder",
+                "description": "Dynamic",
+                "pkg": "simplescreenrecorder",
                 "extra": []
             },
             {
                 "name": "Twitch DL",
-                "icon": "twitch",
+                "icon": "tvtime",
                 "description": "Dynamic",
                 "pkg": "twitch-dl-bin",
-                "extra": []
-            },
-            {
-                "name": "Youtube Download (backend)",
-                "icon": "youtube",
-                "description": "Dynamic",
-                "pkg": "yt-dlp",
                 "extra": []
             }
         ]
@@ -847,7 +826,7 @@
         "apps": [
             {
                 "name": "App Image Launcher",
-                "icon": "appimagelauncher",
+                "icon": "AppImage",
                 "description": "Dynamic",
                 "pkg": "appimagelauncher",
                 "extra": []
@@ -861,21 +840,28 @@
             },
             {
                 "name": "Core Control",
-                "icon": "amd",
+                "icon": "system-error",
                 "description": "Dynamic",
                 "pkg": "corectrl",
                 "extra": []
             },
             {
                 "name": "CPU-X",
-                "icon": "CPU",
+                "icon": "cpu-x",
                 "description": "Dynamic",
                 "pkg": "cpu-x",
                 "extra": []
             },
             {
+                "name": "Docker",
+                "icon": "dnfdragora",
+                "description": "Dynamic",
+                "pkg": "docker",
+                "extra": ["docker-buildx","docker-compose","docker-machine","python-docker"]
+            },
+            {
                 "name": "Fan Control GUI",
-                "icon": "fans",
+                "icon": "control-center2",
                 "description": "Dynamic",
                 "pkg": "fancontrol-gui",
                 "extra": []
@@ -903,7 +889,7 @@
             },
             {
                 "name": "Radeon Control",
-                "icon": "gpu",
+                "icon": "red_glasses",
                 "description": "Dynamic",
                 "pkg": "radeontool",
                 "extra": []
@@ -917,7 +903,7 @@
             },
             {
                 "name": "System Monitoring Center",
-                "icon": "sysprofs",
+                "icon": "system-monitor",
                 "description": "Dynamic",
                 "pkg": "system-monitoring-center",
                 "extra": []

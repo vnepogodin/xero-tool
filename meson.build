@@ -1,5 +1,5 @@
 project('xerowelcome', 'rust',
-        version: '1.0.5',
+        version: '1.0.6',
         license: 'GPLv3',
         meson_version: '>=0.56.0',
         default_options: ['buildtype=debugoptimized',
