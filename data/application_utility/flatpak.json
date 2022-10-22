@@ -13,7 +13,7 @@
             },
             {
                 "name": "GUI Scrcpy",
-                "icon": "guiscrcpy",
+                "icon": "securecrt",
                 "description": "Android Screen Mirroring Software",
                 "pkg": "in.srev.guiscrcpy",
                 "extra": []
@@ -874,7 +874,7 @@
             },
             {
                 "name": "VGrive",
-                "icon": "gdrive",
+                "icon": "google-drive",
                 "description": "Google Drive client",
                 "pkg": "com.github.bcedu.vgrive",
                 "extra": []
@@ -965,7 +965,7 @@
         "apps": [
             {
                 "name": "Parsec",
-                "icon": "parsec",
+                "icon": "regextester",
                 "description": "Simple, low-latency game streaming",
                 "pkg": "com.parsecgaming.parsec",
                 "extra": []
@@ -1105,7 +1105,7 @@
             },
             {
                 "name": "MediaInfo",
-                "icon": "mediainfo",
+                "icon": "mediacontrol",
                 "description": "Convenient unified display of technical/tag data for video and audio files",
                 "pkg": "net.mediaarea.MediaInfo",
                 "extra": []

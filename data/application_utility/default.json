@@ -546,7 +546,7 @@
         "apps": [
             {
                 "name": "Auto CPU Freq",
-                "icon": "power",
+                "icon": "cpuinfo",
                 "description": "Dynamic",
                 "pkg": "auto-cpufreq",
                 "extra": []
@@ -560,14 +560,14 @@
             },
             {
                 "name": "System76 Power",
-                "icon": "power",
+                "icon": "system76-driver",
                 "description": "Dynamic",
                 "pkg": "system76-power",
                 "extra": []
             },
             {
                 "name": "TLP",
-                "icon": "tlp",
+                "icon": "battery",
                 "description": "Dynamic",
                 "pkg": "tlp",
                 "extra": []
@@ -616,14 +616,14 @@
         "apps": [
             {
                 "name": "KonSave",
-                "icon": "gears",
+                "icon": "terminal",
                 "description": "Dynamic",
                 "pkg": "konsave",
                 "extra": []
             },
             {
                 "name": "Variety",
-                "icon": "wallpapers",
+                "icon": "wallpaper",
                 "description": "Dynamic",
                 "pkg": "variety",
                 "extra": []
@@ -637,7 +637,7 @@
             },
             {
                 "name": "XScreensaver",
-                "icon": "screen",
+                "icon": "screensaver",
                 "description": "Dynamic",
                 "pkg": "xscreensaver",
                 "extra": []
