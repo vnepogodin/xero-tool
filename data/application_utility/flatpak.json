@@ -346,7 +346,7 @@
                 "description": "A 3D open-source kart racing game starring Tux the Penguin",
                 "pkg": "net.supertuxkart.SuperTuxKart",
                 "extra": []
-            }
+            },
             {
                 "name": "Wolfenstein: Blade of Agony",
                 "icon": "doom",
