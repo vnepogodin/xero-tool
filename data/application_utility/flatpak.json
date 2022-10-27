@@ -1153,7 +1153,7 @@
                 "extra": []
             },
             {
-                "name": "OBS Studio",
+                "name": "OBS Studio AiO (Incl. Plugins)",
                 "icon": "obs",
                 "description": "Live streaming and video recording software",
                 "pkg": "com.obsproject.Studio",
