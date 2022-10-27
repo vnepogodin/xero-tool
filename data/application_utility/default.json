@@ -175,9 +175,9 @@
         ]
     },
     {
-        "name": "BTRFS Tools",
-        "icon": "timeshift",
-        "description": "BTRFS Snapshotting Tools",
+        "name": "Backup Tools",
+        "icon": "disks",
+        "description": "Tools For Backing up",
         "apps": [
             {
                 "name": "BTRFS Snapper",
@@ -191,7 +191,28 @@
                 "icon": "timeshift",
                 "description": "Dynamic",
                 "pkg": "timeshift-support",
-                "extra": ["grub-btrfs"]
+                "extra": []
+            },
+            {
+                "name": "Deja-Dup (GTK)",
+                "icon": "deja-dup",
+                "description": "Dynamic",
+                "pkg": "deja-dup",
+                "extra": []
+            },
+            {
+                "name": "KBackup (KDE)",
+                "icon": "kbackup",
+                "description": "Dynamic",
+                "pkg": "kbackup",
+                "extra": []
+            },
+            {
+                "name": "TimeShift (EXT4/XFS)",
+                "icon": "timeshift",
+                "description": "Dynamic",
+                "pkg": "timeshift",
+                "extra": []
             }
         ]
     },
@@ -913,13 +934,6 @@
                 "icon": "wine",
                 "description": "Dynamic",
                 "pkg": "wine-meta",
-                "extra": []
-            },
-            {
-                "name": "TimeShift",
-                "icon": "timeshift",
-                "description": "Dynamic",
-                "pkg": "timeshift",
                 "extra": []
             }
         ]
