@@ -468,13 +468,6 @@
                 "extra": []
             },
             {
-                "name": "Xtreme Download",
-                "icon": "download",
-                "description": "Dynamic",
-                "pkg": "xtreme-download",
-                "extra": []
-            },
-            {
                 "name": "Blue Mail",
                 "icon": "kmail",
                 "description": "Dynamic",
