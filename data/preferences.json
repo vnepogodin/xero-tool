@@ -4,7 +4,7 @@
     "data_path": "/usr/share/xerowelcome/data/",
     "desktop_path": "/usr/share/applications/xerowelcome.desktop",
     "installer_path": "/usr/bin/calamares",
-    "live_path": "/run/archiso/bootmnt/arch",
+    "live_path": "/run/archiso/airootfs",
     "locale_path": "/usr/share/locale/",
     "logo_path": "/usr/share/icons/hicolor/scalable/apps/",
     "save_path": "~/.config/xerowelcome.json",
