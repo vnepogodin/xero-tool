@@ -778,62 +778,6 @@
         ]
     },
     {
-        "name": "Video Tools",
-        "icon": "video",
-        "description": "Various Video Tools",
-        "apps": [
-            {
-                "name": "Baka Media Player",
-                "icon": "mplayer",
-                "description": "Dynamic",
-                "pkg": "baka-mplayer",
-                "extra": []
-            },
-            {
-                "name": "Hypnotix",
-                "icon": "video",
-                "description": "Dynamic",
-                "pkg": "hypnotix",
-                "extra": []
-            },
-            {
-                "name": "Media Downloader",
-                "icon": "youtube",
-                "description": "Dynamic",
-                "pkg": "media-downloader",
-                "extra": ["yt-dlp"]
-            },
-            {
-                "name": "Mystiq",
-                "icon": "mystiq",
-                "description": "Dynamic",
-                "pkg": "mystiq",
-                "extra": []
-            },
-            {
-                "name": "Plex Media Server",
-                "icon": "pnmixer",
-                "description": "Dynamic",
-                "pkg": "plex-media-server",
-                "extra": ["plex-media-player"]
-            },
-            {
-                "name": "Simple Screen Recorder",
-                "icon": "simplescreenrecorder",
-                "description": "Dynamic",
-                "pkg": "simplescreenrecorder",
-                "extra": []
-            },
-            {
-                "name": "Twitch DL",
-                "icon": "tvtime",
-                "description": "Dynamic",
-                "pkg": "twitch-dl-bin",
-                "extra": []
-            }
-        ]
-    },
-    {
         "name": "System Utilities",
         "icon": "applications-system",
         "description": "Various System Utilities",
@@ -927,6 +871,69 @@
                 "icon": "wine",
                 "description": "Dynamic",
                 "pkg": "wine-meta",
+                "extra": []
+            }
+        ]
+    },
+    {
+        "name": "Video Tools",
+        "icon": "video",
+        "description": "Various Video Tools",
+        "apps": [
+            {
+                "name": "Baka Media Player",
+                "icon": "mplayer",
+                "description": "Dynamic",
+                "pkg": "baka-mplayer",
+                "extra": []
+            },
+            {
+                "name": "Hypnotix",
+                "icon": "video",
+                "description": "Dynamic",
+                "pkg": "hypnotix",
+                "extra": []
+            },
+            {
+                "name": "Jellyfin Complete",
+                "icon": "mediacontrol",
+                "description": "Dynamic",
+                "pkg": "jellyfin-bin",
+                "extra": ["jellyfin-server-bin","jellyfin-web-bin","jellyfin-ffmpeg5","mopidy-jellyfin"]
+            },
+            {
+                "name": "Media Downloader",
+                "icon": "youtube",
+                "description": "Dynamic",
+                "pkg": "media-downloader",
+                "extra": ["yt-dlp"]
+            },
+            {
+                "name": "Mystiq",
+                "icon": "mystiq",
+                "description": "Dynamic",
+                "pkg": "mystiq",
+                "extra": []
+            },
+            {
+                "name": "Plex Media Server",
+                "icon": "pnmixer",
+                "description": "Dynamic",
+                "pkg": "plex-media-server",
+                "extra": ["plex-media-player"]
+            },
+            {
+                "name": "Simple Screen Recorder",
+                "icon": "simplescreenrecorder",
+                "description": "Dynamic",
+                "pkg": "simplescreenrecorder",
+                "extra": []
+            },
+            {
+                "name": "Twitch DL",
+                "icon": "tvtime",
+                "description": "Dynamic",
+                "pkg": "twitch-dl-bin",
                 "extra": []
             }
         ]
