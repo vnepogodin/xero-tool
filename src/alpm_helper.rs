@@ -1,7 +1,5 @@
 use crate::utils;
 use crate::utils::PacmanWrapper;
-use std::path::Path;
-use subprocess::Exec;
 
 use gtk::prelude::*;
 
