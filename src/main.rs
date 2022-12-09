@@ -225,7 +225,6 @@ fn build_ui(application: &gtk::Application) {
     let autostart_switch: gtk::Switch = builder.object("autostart").unwrap();
     autostart_switch.set_active(autostart);
 
-    pages::init_mirrorlist_main_button(&builder);
     pages::init_gpg_main_button(&builder);
     pages::init_update_sys_main_button(&builder);
 
@@ -261,17 +260,23 @@ fn build_ui(application: &gtk::Application) {
         fix_vmware_res_btn.set_visible(true);
         let fix_qemu_res_btn = gtk::Button::with_label("QEMU Resolution Fix");
         fix_qemu_res_btn.set_visible(true);
+        let donate_btn = gtk::Button::with_label("Donate");
+        donate_btn.set_visible(true);
 
         fix_vmware_res_btn.connect_clicked(move |_| {
             let _ = utils::run_cmd_root(String::from("systemctl enable --now vmtoolsd"));
         });
+        donate_btn.connect_clicked(move |_| {
+            let uri = "https://fnd.us/523mC5";
+            let _ = gtk::show_uri_on_window(gtk::Window::NONE, uri, 0);
+        });
         fix_qemu_res_btn.connect_clicked(move |_| {
-            Exec::shell(String::from("xrandr -s 1920x1080")).join().unwrap();
+            Exec::shell(String::from("xrandr -s 1920x1080 && xrandr --dpi 96")).join().unwrap();
         });
 
         homepage_grid.remove(&update_mirrorlist_btn);
         homepage_grid.attach(&fix_vmware_res_btn, 0, 5, 1, 1);
-        homepage_grid.attach(&update_mirrorlist_btn, 1, 5, 1, 1);
+        homepage_grid.attach(&donate_btn, 1, 5, 1, 1);
         homepage_grid.attach(&fix_qemu_res_btn, 2, 5, 1, 1);
 
         let install_label: gtk::Label = builder.object("installlabel").unwrap();
@@ -298,6 +303,7 @@ fn build_ui(application: &gtk::Application) {
         let install: gtk::Button = builder.object("install").unwrap();
         install.set_visible(false);
     }
+    pages::init_mirrorlist_main_button(&builder);
     pages::create_appbrowser_page(&builder);
     pages::create_postinstall_page(&builder);
     pages::create_drivers_page(&builder);

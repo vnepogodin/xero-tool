@@ -3,6 +3,7 @@ use crate::config::PKGDATADIR;
 use crate::utils;
 use crate::utils::PacmanWrapper;
 use gtk::{glib, Builder};
+use subprocess::Exec;
 
 use gtk::prelude::*;
 
@@ -37,11 +38,12 @@ pub fn create_postinstall_page(builder: &Builder) {
     let init_snapper_btn: gtk::Button = page_builder.object("init-snapper").unwrap();
     let switch_to_zsh_btn: gtk::Button = page_builder.object("switch-to-zsh").unwrap();
     let apply_defaults_btn: gtk::Button = page_builder.object("apply-defaults").unwrap();
-    let renable_wayland_btn: gtk::Button = page_builder.object("renable-wayland").unwrap();
+    let enable_wayland_btn: gtk::Button = page_builder.object("enable-wayland").unwrap();
     let revert_to_bash_btn: gtk::Button = page_builder.object("revert-to-bash").unwrap();
     let refreshkeyring_btn: gtk::Button = page_builder.object("refreshkeyring").unwrap();
     let plasma_firewall_btn: gtk::Button = page_builder.object("plasma-firewall").unwrap();
     let hblock_btn: gtk::Button = page_builder.object("hblock").unwrap();
+    let fix_res_btn: gtk::Button = page_builder.object("fix-resolution").unwrap();
 
     refreshkeyring_btn.connect_clicked(on_refreshkeyring_btn_clicked);
     hblock_btn.connect_clicked(on_hblock_btn_clicked);
@@ -57,9 +59,9 @@ pub fn create_postinstall_page(builder: &Builder) {
             false,
         );
     });
-    renable_wayland_btn.connect_clicked(move |_| {
+    enable_wayland_btn.connect_clicked(move |_| {
         let _ = utils::run_cmd_terminal(
-            String::from("/usr/share/xerowelcome/scripts/renable_wayland.sh"),
+            String::from("/usr/share/xerowelcome/scripts/enable_wayland.sh"),
             false,
         );
     });
@@ -80,6 +82,9 @@ pub fn create_postinstall_page(builder: &Builder) {
             String::from("/usr/share/xerowelcome/scripts/revert_to_bash.sh"),
             false,
         );
+    });
+    fix_res_btn.connect_clicked(move |_| {
+        Exec::shell(String::from("xrandr -s 1920x1080 && xrandr --dpi 96")).join().unwrap();
     });
 
     // let options_section_box = create_options_section();
@@ -178,11 +183,21 @@ pub fn create_drivers_page(builder: &Builder) {
     let free_drivers_btn: gtk::Button = page_builder.object("free-drivers").unwrap();
     let switch_to_lightdm_btn: gtk::Button = page_builder.object("switch-to-lightdm").unwrap();
     let switch_to_sddm_btn: gtk::Button = page_builder.object("switch-to-sddm").unwrap();
-    let hybrid_setup_btn: gtk::Button = page_builder.object("hybrid-setup").unwrap();
-    let optimus_guide_btn: gtk::Button = page_builder.object("optimus-guide").unwrap();
+    let asus_rog_tools_btn: gtk::Button = page_builder.object("asus-rog-tools").unwrap();
+    let optimus_discord_btn: gtk::Button = page_builder.object("optimus-discord").unwrap();
 
-    nonfree_drivers_btn.connect_clicked(on_nonfree_drivers_btn_clicked);
-    free_drivers_btn.connect_clicked(on_free_drivers_btn_clicked);
+    nonfree_drivers_btn.connect_clicked(move |_| {
+        let _ = utils::run_cmd_terminal(
+            String::from("/usr/share/xerowelcome/scripts/nVidia_drivers.sh"),
+            false,
+        );
+    });
+    free_drivers_btn.connect_clicked(move |_| {
+        let _ = utils::run_cmd_terminal(
+            String::from("/usr/share/xerowelcome/scripts/FOSS_drivers.sh"),
+            false,
+        );
+    });
     switch_to_lightdm_btn.connect_clicked(move |_| {
         let _ = utils::run_cmd_terminal(
             String::from("/usr/share/xerowelcome/scripts/switch_to_lightdm.sh"),
@@ -195,12 +210,12 @@ pub fn create_drivers_page(builder: &Builder) {
             false,
         );
     });
-    hybrid_setup_btn.connect_clicked(move |_| {
-        let uri = "https://forum.xerolinux.xyz/thread-124.html";
+    asus_rog_tools_btn.connect_clicked(move |_| {
+        let uri = "https://asus-linux.org/";
         let _ = gtk::show_uri_on_window(gtk::Window::NONE, uri, 0);
     });
-    optimus_guide_btn.connect_clicked(move |_| {
-        let uri = "https://forum.xerolinux.xyz/thread-126.html";
+    optimus_discord_btn.connect_clicked(move |_| {
+        let uri = "https://discord.gg/4ZKGd7Un5t";
         let _ = gtk::show_uri_on_window(gtk::Window::NONE, uri, 0);
     });
 
@@ -356,25 +371,6 @@ pub fn init_gpg_main_button(builder: &Builder) {
 pub fn init_update_sys_main_button(builder: &Builder) {
     let update_system_btn: gtk::Button = builder.object("update-system").unwrap();
     update_system_btn.connect_clicked(on_update_system_btn_clicked);
-}
-
-#[inline]
-fn on_nonfree_drivers_btn_clicked(_: &gtk::Button) {
-    run_drivers_cmd_clicked("nonfree");
-}
-
-#[inline]
-fn on_free_drivers_btn_clicked(_: &gtk::Button) {
-    run_drivers_cmd_clicked("free");
-}
-
-fn run_drivers_cmd_clicked(driver_type: &'static str) {
-    let mut cmd_full = String::new();
-    for driverid in &["0300", "0302", "0380"] {
-        cmd_full.push_str(&format!("sudo mhwd -a pci {} {};", driver_type, driverid));
-    }
-
-    let _ = utils::run_cmd_terminal(format!("bash -c \"{}\"", cmd_full), false);
 }
 
 fn on_refreshkeyring_btn_clicked(_: &gtk::Button) {

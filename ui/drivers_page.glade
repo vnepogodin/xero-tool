@@ -71,14 +71,14 @@ along with cachyos-welcome.  If not, see <http://www.gnu.org/licenses/>.
           <object class="GtkLabel" id="mainlabel">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
-            <property name="label" translatable="yes">This is where you will be able to select the Drivers to install. This uses a tool created by the *Manjaro* team, we just implemented here. 
+            <property name="label" translatable="yes">This is where you will be able to select the Drivers to install. Make sure you select the appropriate drivers, we won't be held liable if you select wrong ones and break your system. 
 
-- For nVidia &amp; AMD Pro based GPUs select the "Proprietary Drivers (non Free)".
+- For nVidia based GPUs select the "Proprietary Drivers (non Free)".
 - For Intel/AMD(non Pro) and ATI (Radeon HD) select the "Free Open Source Drivers".
 
-The system will automatically install the right Drivers and Tools for your GPU(s). If you have Dual  GPUs and have issues with Optimus NOT running, try switching to LightDM.
+If you encounter any issues, like for example Black Screen Of Death, try switching to LightDM in TTY (ctrl+alt+F3) via the 'tolightdm' command.
 
-Note : That's as far as our support for *Hybrid* Setups goes. In case of any issues,  you will have to do the research on your own. Consider this as an opportunity to learn ;).</property>
+Note : For *Hybrid* Setups, try installing either **Optimus** or **EnvyControl** otherwise you will have to do the research on your own. Consider this as an opportunity to learn ;)</property>
             <property name="justify">fill</property>
             <property name="wrap">True</property>
             <property name="width-chars">1</property>
@@ -94,7 +94,7 @@ Note : That's as far as our support for *Hybrid* Setups goes. In case of any iss
           <object class="GtkLabel" id="welcometitle">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
-            <property name="label" translatable="yes">Drivers Installer (mhwd)</property>
+            <property name="label" translatable="yes">Drivers Installer</property>
             <attributes>
               <attribute name="weight" value="bold"/>
               <attribute name="scale" value="2"/>
@@ -107,12 +107,15 @@ Note : That's as far as our support for *Hybrid* Setups goes. In case of any iss
           </packing>
         </child>
         <child>
-          <object class="GtkButton" id="hybrid-setup">
-            <property name="label" translatable="yes">nVidia Hybrid Setups Docs</property>
-            <property name="name">hybrid-setup</property>
+          <object class="GtkButton" id="asus-rog-tools">
+            <property name="label" translatable="yes">ASUS-ROG Optimus Laptop Tools</property>
+            <property name="name">asus-rog-tools</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
             <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Web resource</property>
+            <property name="image-position">right</property>
+            <property name="always-show-image">True</property>
           </object>
           <packing>
             <property name="left-attach">0</property>
@@ -120,12 +123,15 @@ Note : That's as far as our support for *Hybrid* Setups goes. In case of any iss
           </packing>
         </child>
         <child>
-          <object class="GtkButton" id="optimus-guide">
-            <property name="label" translatable="yes">Optimus  Manager Ez Guide</property>
-            <property name="name">optimus-guide</property>
+          <object class="GtkButton" id="optimus-discord">
+            <property name="label" translatable="yes">ASUS-ROG Optimus Discord</property>
+            <property name="name">optimus-discord</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
             <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Web resource</property>
+            <property name="image-position">right</property>
+            <property name="always-show-image">True</property>
           </object>
           <packing>
             <property name="left-attach">1</property>

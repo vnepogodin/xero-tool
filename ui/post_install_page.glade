@@ -152,9 +152,9 @@ Enjoy tweaking your XeroLinux ;)</property>
           </packing>
         </child>
         <child>
-          <object class="GtkButton" id="renable-wayland">
-            <property name="label" translatable="yes">Re-enable Wayland Support</property>
-            <property name="name">renable-wayland</property>
+          <object class="GtkButton" id="enable-wayland">
+            <property name="label" translatable="yes">Enable Wayland Session</property>
+            <property name="name">enable-wayland</property>
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="receives-default">True</property>
@@ -165,48 +165,42 @@ Enjoy tweaking your XeroLinux ;)</property>
           </packing>
         </child>
         <child>
-          <object class="GtkBox">
-            <property name="name">boxPlugins</property>
+          <object class="GtkButton" id="plasma-firewall">
+            <property name="label" translatable="yes">Install/Enable Plasma-Firewall</property>
+            <property name="name">plasma-firewall</property>
             <property name="visible">True</property>
-            <property name="can-focus">False</property>
-            <property name="homogeneous">True</property>
-            <child>
-              <object class="GtkButton" id="plasma-firewall">
-                <property name="label" translatable="yes">Install/Enable Plasma-Firewall</property>
-                <property name="name">plasma-firewall</property>
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="receives-default">True</property>
-                <property name="margin-left">15</property>
-                <property name="margin-right">15</property>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="hblock">
-                <property name="label" translatable="yes">Install/Enable HBlock</property>
-                <property name="name">hblock</property>
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="receives-default">True</property>
-                <property name="margin-left">15</property>
-                <property name="margin-right">15</property>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">1</property>
-              </packing>
-            </child>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
           </object>
           <packing>
             <property name="left-attach">0</property>
             <property name="top-attach">7</property>
-            <property name="width">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="hblock">
+            <property name="label" translatable="yes">Install/Enable HBlock</property>
+            <property name="name">hblock</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+          </object>
+          <packing>
+            <property name="left-attach">1</property>
+            <property name="top-attach">7</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="fix-resolution">
+            <property name="label" translatable="yes">QEMU Resolution Fix</property>
+            <property name="name">fix-resolution</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+          </object>
+          <packing>
+            <property name="left-attach">2</property>
+            <property name="top-attach">7</property>
           </packing>
         </child>
         <child>

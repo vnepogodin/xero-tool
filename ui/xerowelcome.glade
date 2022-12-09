@@ -197,26 +197,6 @@ We, the XeroLinux Developers, hope that you will enjoy using XeroLinux as much a
                 <property name="spacing">10</property>
                 <child>
                   <object class="GtkEventBox">
-                    <property name="name">telegram</property>
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
-                    <signal name="button-press-event" handler="on_link_clicked" swapped="no"/>
-                    <child>
-                      <object class="GtkImage" id="telegram">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-                        <property name="tooltip-text">Telegram</property>
-                      </object>
-                    </child>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">0</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkEventBox">
                     <property name="name">youtube</property>
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
@@ -257,15 +237,15 @@ We, the XeroLinux Developers, hope that you will enjoy using XeroLinux as much a
                 </child>
                 <child>
                   <object class="GtkEventBox">
-                    <property name="name">twitter</property>
+                    <property name="name">mastodon</property>
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <signal name="button-press-event" handler="on_link_clicked" swapped="no"/>
                     <child>
-                      <object class="GtkImage" id="twitter">
+                      <object class="GtkImage" id="mastodon">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="tooltip-text">Twitter</property>
+                        <property name="tooltip-text">Mastodon</property>
                       </object>
                     </child>
                   </object>
