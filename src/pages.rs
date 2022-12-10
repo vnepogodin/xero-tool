@@ -123,6 +123,7 @@ pub fn create_appbrowser_page(builder: &Builder) {
     let image = gtk::Image::from_icon_name(Some("go-previous"), gtk::IconSize::Button);
     let back_btn = gtk::Button::new();
     back_btn.set_image(Some(&image));
+    back_btn.set_label("Back");
     back_btn.set_widget_name("home");
 
     back_btn.connect_clicked(glib::clone!(@weak builder => move |button| {
