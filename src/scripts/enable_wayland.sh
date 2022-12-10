@@ -8,7 +8,7 @@
 echo
 tput setaf 3
 echo "###############################################################################"
-echo "#                          eroLinux Wayland Enabler                           #"
+echo "#                         XeroLinux Wayland Enabler                           #"
 echo "#                                                                             #"
 echo "#                            !!!! ATTENTION !!!                               #"
 echo "#                                                                             #"
