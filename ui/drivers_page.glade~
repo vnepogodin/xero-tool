@@ -71,12 +71,14 @@ along with cachyos-welcome.  If not, see <http://www.gnu.org/licenses/>.
           <object class="GtkLabel" id="mainlabel">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
-            <property name="label" translatable="yes">This is where you will be able to select the Drivers to install. Make sure you select the appropriate drivers, we won't be held liable if you select wrong ones and break your system.  (Hybrid/Dual-GPU Setups will be on you).
+            <property name="label" translatable="yes">This is where you will be able to select the Drivers to install. Make sure you select the appropriate drivers, we won't be held liable if you select wrong ones and break your system. 
 
 - For nVidia based GPUs select the "Proprietary Drivers (non Free)".
 - For Intel/AMD(non Pro) and ATI (Radeon HD) select the "Free Open Source Drivers".
 
-If you encounter any issues, like for example Black Screen Of Death, try switching to LightDM in TTY (ctrl+alt+F3) via the 'tolightdm' command.</property>
+If you encounter any issues, like for example Black Screen Of Death, try switching to LightDM in TTY (ctrl+alt+F3) via the 'tolightdm' command.
+
+Note : For *Hybrid* Setups, try installing either **Optimus** or **EnvyControl** otherwise you will have to do the research on your own. Consider this as an opportunity to learn ;)</property>
             <property name="justify">fill</property>
             <property name="wrap">True</property>
             <property name="width-chars">1</property>
