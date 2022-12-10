@@ -148,12 +148,6 @@ pub fn create_appbrowser_page(builder: &Builder) {
     viewport.add(&grid);
     viewport.show_all();
 
-    back_btn.connect_clicked(glib::clone!(@weak builder => move |button| {
-        let name = button.widget_name();
-        let stack: gtk::Stack = builder.object("stack").unwrap();
-        stack.set_visible_child_name(&format!("{}page", name));
-    }));
-
     let stack: gtk::Stack = builder.object("stack").unwrap();
     let child_name = "appBrowserpage";
     stack.add_named(&viewport, child_name);
