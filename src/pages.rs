@@ -148,6 +148,17 @@ pub fn create_appbrowser_page(builder: &Builder) {
     viewport.add(&grid);
     viewport.show_all();
 
+    let back_btn: gtk::Button = page_builder.object("backbutton").unwrap();
+    // let back_btn = gtk::Button::new();
+    back_btn.set_image(Some(&image));
+    back_btn.set_widget_name("home");
+
+    back_btn.connect_clicked(glib::clone!(@weak builder => move |button| {
+        let name = button.widget_name();
+        let stack: gtk::Stack = builder.object("stack").unwrap();
+        stack.set_visible_child_name(&format!("{}page", name));
+    }));
+
     let stack: gtk::Stack = builder.object("stack").unwrap();
     let child_name = "appBrowserpage";
     stack.add_named(&viewport, child_name);
