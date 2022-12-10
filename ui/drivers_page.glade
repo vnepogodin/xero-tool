@@ -71,7 +71,7 @@ along with cachyos-welcome.  If not, see <http://www.gnu.org/licenses/>.
           <object class="GtkLabel" id="mainlabel">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
-            <property name="label" translatable="yes">This is where you will be able to select the Drivers to install. Make sure you select the appropriate drivers, we won't be held liable if you select wrong ones and break your system. If you own an ASUS-ROG Optimus Laptop click buttons below for assistance bt the ASUS-ROG Linux Alliance (Not me). For other Dual-GPU Setups it's on you, to figure it out. (Sorry!)
+            <property name="label" translatable="yes">This is where you will be able to select the Drivers to install. Make sure you select the appropriate drivers, we won't be held liable if you select wrong ones and break your system. If you own an ASUS-ROG Optimus Laptop click buttons below for assistance by the ASUS-ROG Linux Alliance (Not me). For other Dual-GPU Setups it's on you, to figure it out. (Sorry!)
 
 - For nVidia based GPUs select the "Proprietary Drivers (non Free)".
 - For Intel/AMD(non Pro) and ATI (Radeon HD) select the "Free Open Source Drivers".
