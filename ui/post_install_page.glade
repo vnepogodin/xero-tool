@@ -88,7 +88,7 @@ Enjoy tweaking your XeroLinux ;)</property>
         </child>
         <child>
           <object class="GtkButton" id="apply-defaults">
-            <property name="label" translatable="yes">Apply XeroLinux Defaults</property>
+            <property name="label" translatable="yes">Restore Default Desktop Settings</property>
             <property name="name">apply-defaults</property>
             <property name="visible">True</property>
             <property name="can-focus">False</property>
