@@ -30,6 +30,14 @@ sudo pacman-key --init && sudo pacman-key --populate
 
 sleep 2
 echo
+echo "#################################"
+echo "#   Adding Ubuntu keyserver..   #"
+echo "#################################"
+
+echo "keyserver hkp://keyserver.ubuntu.com:80" | sudo tee --append /etc/pacman.d/gnupg/gpg.conf
+
+sleep 2
+echo
 echo "##################################"
 echo "#  Updating ArchLinux Keyring..  #"
 echo "##################################"
