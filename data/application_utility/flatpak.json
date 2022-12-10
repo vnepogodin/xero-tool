@@ -124,6 +124,13 @@
                 "extra": []
             },
             {
+                "name": "Shortwave",
+                "icon": "audio-player",
+                "description": "Listen to internet radio",
+                "pkg": "de.haeckerfelix.Shortwave",
+                "extra": []
+            },
+            {
                 "name": "Soundux",
                 "icon": "sound",
                 "description": "A cross-platform soundboard",
@@ -598,6 +605,13 @@
                 "description": "Digital Painting Creative Freedom",
                 "pkg": "org.kde.krita",
                 "extra": []
+            },
+            {
+                "name": "Upscaler",
+                "icon": "krita",
+                "description": "Upscale and enhance images",
+                "pkg": "io.gitlab.theevilskeleton.Upscaler",
+                "extra": []
             }
         ]
     },
@@ -866,6 +880,13 @@
         "description": "Remote Desktop Tools",
         "apps": [
             {
+                "name": "Connections",
+                "icon": "regextester",
+                "description": "SView and use other desktops",
+                "pkg": "org.gnome.Connections",
+                "extra": []
+            },
+            {
                 "name": "Parsec",
                 "icon": "regextester",
                 "description": "Simple, low-latency game streaming",
@@ -1003,6 +1024,13 @@
                 "icon": "applications-games",
                 "description": "Multi-platform Atari 2600 VCS emulator.",
                 "pkg": "io.github.stella_emu.Stella",
+                "extra": []
+            },
+            {
+                "name": "Xemu",
+                "icon": "applications-games",
+                "description": "Original Xbox Emulator.",
+                "pkg": "app.xemu.xemu",
                 "extra": []
             },
             {

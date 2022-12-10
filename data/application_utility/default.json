@@ -184,7 +184,7 @@
                 "icon": "deja-dup",
                 "description": "Dynamic",
                 "pkg": "btrfs-assistant",
-                "extra": ["btrfs-du","snapper-gui-git","snapper-support"]
+                "extra": ["btrfs-du","snapper-gui-git","snapper-support","btrfsmaintenance"]
             },
             {
                 "name": "BTRFS Timeshift",
@@ -943,6 +943,20 @@
         "icon": "virtualbox",
         "description": "Various Virtualization Utilities",
         "apps": [
+            {
+                "name": "Gnome Boxes",
+                "icon": "virtualbox",
+                "description": "Dynamic",
+                "pkg": "gnome-boxes",
+                "extra": []
+            },
+            {
+                "name": "Virt-Manager / KVM / QEMU",
+                "icon": "virt-manager",
+                "description": "Dynamic",
+                "pkg": "virt-manager-meta",
+                "extra": []
+            },
             {
                 "name": "VirtualBox",
                 "icon": "virtualbox",

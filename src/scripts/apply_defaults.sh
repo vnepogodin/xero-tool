@@ -11,14 +11,14 @@ echo "#                         !!! XeroLinux Reset Tool !!!                    
 echo "#                                                                             #"
 echo "#              Having Issues With Messed Up Layout or Settings ?              #"
 echo "#                                                                             #"
-echo "# This Will Apply Stock Defaults. Layout WILL BE RESET, Your Settings UNDONE! #"
+echo "#            This Will Restore Stock Defaults. Layout WILL BE RESET           #"
 echo "###############################################################################"
 tput sgr0
 echo
 echo "Please Select Which Defaults you want to apply..."
 echo
-echo "1.  Apply Latest Defaults. (Current)"
-echo "2.  Apply Previous Defaults. (Latte + KDE Panel)"
+echo "1.  Restore KDE Defaults."
+echo "2.  Restore Gnome Defaults."
 echo
 echo "3.  Exit"
 echo
@@ -36,10 +36,9 @@ case $CHOICE in
       rm -Rf ~/.local/share/plasma/
       sleep 2
       echo "###################################"
-      echo "Applying latest XeroLinux defaults "
+      echo "       Restoring KDE defaults      "
       echo "###################################"
       sleep 2
-      sudo pacman -Rdd kde-rice --noconfirm
       sudo pacman -Rdd kvantum --noconfirm
       sudo pacman -S xero-kde-config lightly-git latte-dock-git --noconfirm --needed
       cp -rf /etc/skel/. ~
@@ -48,11 +47,10 @@ case $CHOICE in
       cd ~/default-grub/ && sudo ./install.sh
       rm -rf ~/default-grub
       sleep 2
-      echo "#################################"
-      echo "Done! Rebooting to Apply Settings"
-      echo "#################################"
-      sleep 2
-      reboot
+      echo "##################################"
+      echo "  Done! Reboot to Apply Settings  "
+      echo "##################################"
+      sleep 6
 
       ;;
 
@@ -60,26 +58,22 @@ case $CHOICE in
       echo "Creating Backups of ~/.config folder"
       echo "#####################################"
       cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H.%M.%S)
-      rm -Rf ~/.local/share/plasma/
       sleep 2
-      echo "#################################"
-      echo "Restoring default settings"
-      echo "#################################"
+      echo "###################################"
+      echo "      Restoring Gnome defaults     "
+      echo "###################################"
       sleep 2
-      sudo pacman -Rdd xero-kde-config --noconfirm
-      sudo pacman -Rdd lightly-git --noconfirm
-      sudo pacman -S kde-rice kvantum kvantum-theme-layan-git --noconfirm --needed
       cp -rf /etc/skel/. ~
-      sudo sed -i "s/Current=.*/Current=XeroDark/" /etc/sddm.conf.d/kde_settings.conf
       cd ~ && git clone https://github.com/xerolinux/default-grub.git
       cd ~/default-grub/ && sudo ./install.sh
       rm -rf ~/default-grub
+      dconf load /org/gnome/ < /etc/skel/.config/xero-dconf.conf &
+      notify-send "XeroG settings applied Please reboot! 🔥"
       sleep 2
-      echo "#################################"
-      echo "Done! Rebooting to Apply Settings"
-      echo "#################################"
-      sleep 2
-      reboot
+      echo "##################################"
+      echo "  Done! Reboot to Apply Settings  "
+      echo "##################################"
+      sleep 6
 
       ;;
 
