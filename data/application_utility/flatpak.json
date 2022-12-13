@@ -271,6 +271,13 @@
         "description": "Development Studios",
         "apps": [
             {
+                "name": "BlackFennec",
+                "icon": "git",
+                "description": "Extensible Semi-structured Data Editing Environment",
+                "pkg": "org.blackfennec.app",
+                "extra": []
+            },
+            {
                 "name": "GitAhead",
                 "icon": "git",
                 "description": "Understand your Git history!",
@@ -481,6 +488,13 @@
                 "extra": []
             },
             {
+                "name": "Red Eclipse",
+                "icon": "redshift",
+                "description": "First-person shooter with agile gameplay.",
+                "pkg": "net.redeclipse.RedEclipse",
+                "extra": []
+            },
+            {
                 "name": "Space Cadet Pinball",
                 "icon": "net.pcsx2.PCSX2",
                 "description": "Reverse engineering of 3D Pinball",
@@ -499,6 +513,13 @@
                 "icon": "supertux",
                 "description": "A 3D open-source kart racing game starring Tux the Penguin",
                 "pkg": "net.supertuxkart.SuperTuxKart",
+                "extra": []
+            },
+            {
+                "name": "Who Wants To Be a Millionaire",
+                "icon": "net.pcsx2.PCSX2",
+                "description": "Answer all questions to win $1 million.",
+                "pkg": "lv.martinsz.millionaire",
                 "extra": []
             },
             {
