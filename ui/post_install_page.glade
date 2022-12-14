@@ -127,7 +127,7 @@ Enjoy tweaking your XeroLinux ;)</property>
         </child>
         <child>
           <object class="GtkButton" id="revert-to-bash">
-            <property name="label" translatable="yes">Revert back to BASH</property>
+            <property name="label" translatable="yes">Apply Oh My BASH!</property>
             <property name="name">revert-to-bash</property>
             <property name="visible">True</property>
             <property name="can-focus">False</property>

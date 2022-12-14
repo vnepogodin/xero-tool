@@ -79,7 +79,7 @@ pub fn create_postinstall_page(builder: &Builder) {
     });
     revert_to_bash_btn.connect_clicked(move |_| {
         let _ = utils::run_cmd_terminal(
-            String::from("/usr/share/xerowelcome/scripts/revert_to_bash.sh"),
+            String::from("/usr/share/xerowelcome/scripts/oh_my_bash.sh"),
             false,
         );
     });
