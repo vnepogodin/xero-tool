@@ -480,6 +480,13 @@
                 "description": "Dynamic",
                 "pkg": "kmail",
                 "extra": []
+            },
+            {
+                "name": "SimpleX Chat CLI",
+                "icon": "signal",
+                "description": "Dynamic",
+                "pkg": "simplex-chat-bin",
+                "extra": []
             }
         ]
     },
