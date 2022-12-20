@@ -13,7 +13,7 @@ source=("${pkgname}::git+$url.git")
 sha512sums=('SKIP')
 provides=('xerowelcome')
 conflicts=('xerowelcome')
-replaces=('xerolinux-tool' 'xerolinux-tool-dev')
+replaces=('xerolinux-tool' 'xerolinux-tool-dev' 'xero-g-hello')
 options=(strip)
 
 build() {
