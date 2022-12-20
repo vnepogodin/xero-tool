@@ -402,7 +402,7 @@
                 "icon": "vivaldi",
                 "description": "Dynamic",
                 "pkg": "vivaldi",
-                "extra": ["vivaldi-ffmpeg-codecs"]
+                "extra": ["vivaldi-ffmpeg-codecs","vivaldi-widevine"]
             },
             {
                 "name": "Waterfox",

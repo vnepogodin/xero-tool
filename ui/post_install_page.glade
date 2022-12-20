@@ -166,7 +166,7 @@ Enjoy tweaking your XeroLinux ;)</property>
         </child>
         <child>
           <object class="GtkButton" id="plasma-firewall">
-            <property name="label" translatable="yes">Install Firewall (KDE only!)</property>
+            <property name="label" translatable="yes">Install/Enable Firewall</property>
             <property name="name">plasma-firewall</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>

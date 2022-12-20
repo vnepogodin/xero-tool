@@ -5,7 +5,7 @@ echo "###################################"
 echo "#      Installing OhMyBash!       #"
 echo "###################################"
 
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+bash -ci "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 
 sleep 2
 echo "##################################"
