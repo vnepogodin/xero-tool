@@ -958,7 +958,14 @@
                 "extra": []
             },
             {
-                "name": "Virt-Manager / KVM / QEMU",
+                "name": "QuickEmu Incl. QuickGUI",
+                "icon": "virtualbox",
+                "description": "Dynamic",
+                "pkg": "quickemu",
+                "extra": ["quickgui-bin"]
+            },
+            {
+                "name": "Virt-Manager",
                 "icon": "virt-manager",
                 "description": "Dynamic",
                 "pkg": "virt-manager-meta",
