@@ -306,6 +306,13 @@
                 "extra": []
             },
             {
+                "name": "Glade",
+                "icon": "GitKraken",
+                "description": "Create or open user interface designs for GTK+ applications.",
+                "pkg": "org.gnome.Glade",
+                "extra": []
+            },
+            {
                 "name": "Godot",
                 "icon": "godot",
                 "description": "Godot game engine editor",

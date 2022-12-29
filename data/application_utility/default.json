@@ -61,6 +61,13 @@
                 "extra": []
             },
             {
+                "name": "Droid Cam",
+                "icon": "androidstudio",
+                "description": "Dynamic",
+                "pkg": "droidcam",
+                "extra": []
+            },
+            {
                 "name": "QT-SCRCPY",
                 "icon": "camera-web",
                 "description": "Dynamic",
@@ -516,6 +523,13 @@
         "icon": "pamac",
         "description": "Alternative Package Managers",
         "apps": [
+            {
+                "name": "AppImage Launcher",
+                "icon": "beagled",
+                "description": "Dynamic",
+                "pkg": "appimagelauncher",
+                "extra": []
+            },
             {
                 "name": "Aura",
                 "icon": "beagled",
