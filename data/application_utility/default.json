@@ -927,7 +927,7 @@
                 "icon": "youtube",
                 "description": "Dynamic",
                 "pkg": "media-downloader",
-                "extra": ["yt-dlp"]
+                "extra": ["yt-dlp","aria2","aria2cd"]
             },
             {
                 "name": "Mystiq",
