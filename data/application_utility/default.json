@@ -73,6 +73,13 @@
                 "description": "Dynamic",
                 "pkg": "qtscrcpy",
                 "extra": ["scrcpy"]
+            },
+            {
+                "name": "WayDroid (Wayland Only!)",
+                "icon": "android-file-transfer",
+                "description": "Dynamic",
+                "pkg": "waydroid",
+                "extra": []
             }
         ]
     },
